@@ -2,7 +2,7 @@
 
 # 一、商店安装地址
 
-[https://greasyfork.org/zh-CN/scripts/419783-ast-explorer%E5%8A%A9%E6%89%8B](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer%E5%8A%A9%E6%89%8B)
+[https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer%E5%8A%A9%E6%89%8B)
 
 # 二、功能
 
