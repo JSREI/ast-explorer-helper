@@ -6,6 +6,8 @@
 
 # 二、功能
 
+提升 [https://astexplorer.net/](https://astexplorer.net/) 的使用体验， 提高分析程序结构的效率。
+
 - 隐藏设置一次之后就再也用不到的的banner栏
 - 让右侧的ast树形结构的key能够复制
 
