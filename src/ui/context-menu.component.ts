@@ -5,6 +5,7 @@
 import { findNodeType, getNodePath, getFullNodeContent } from '../ast-node/node-info.service';
 import { copyToClipboard } from '../clipboard/clipboard.service';
 import { removeHighlight } from '../dom-helpers/dom-utils';
+import { logger } from '../logger';
 
 // 自定义类型，扩展HTMLElement
 interface ContextMenuElement extends HTMLElement {
@@ -19,31 +20,75 @@ const highlightColor = "rgba(200, 200, 200, 0.3)";
  * @param node 要展开的节点
  */
 export function expandAllNodes(node: HTMLElement): void {
+    logger.debug('开始递归展开节点', node);
+    
     // 递归展开节点的函数
     function expandNodes() {
-        // 查找所有折叠的节点并展开
-        const collapsedElements = node.querySelectorAll('.expandable.collapsed');
+        // 查找所有折叠的节点 - 支持多种可能的类名组合
+        // AST Explorer 使用 "entry toggable" 和 "expandable collapsed" 类名
+        const collapsedElements = [
+            ...Array.from(node.querySelectorAll('.entry.toggable:not(.open)')),
+            ...Array.from(node.querySelectorAll('.expandable.collapsed'))
+        ];
+        
+        logger.debug(`发现 ${collapsedElements.length} 个待展开的节点`);
         
         // 如果没有折叠的节点，说明全部展开完毕
         if (collapsedElements.length === 0) {
+            logger.debug('所有节点已展开完毕');
             return;
         }
         
         // 展开找到的所有节点
         let didExpand = false;
         collapsedElements.forEach(elem => {
-            // 模拟点击展开图标
-            const expandIcon = elem.querySelector('.disclosure-arrow');
-            if (expandIcon && expandIcon instanceof HTMLElement) {
-                expandIcon.click();
-                didExpand = true;
+            try {
+                // 尝试不同的展开方法
+                let expanded = false;
+                
+                // 1. 尝试点击展开图标（如果存在）
+                const expandIcon = elem.querySelector('.disclosure-arrow') || 
+                                   elem.querySelector('.arrow') || 
+                                   elem.querySelector('[class*="arrow"]');
+                
+                if (expandIcon && expandIcon instanceof HTMLElement) {
+                    logger.debug('找到展开箭头，点击展开', expandIcon);
+                    expandIcon.click();
+                    expanded = true;
+                    didExpand = true;
+                }
+                
+                // 2. 如果没有找到展开图标，直接点击节点本身
+                if (!expanded) {
+                    logger.debug('未找到展开箭头，尝试点击节点本身', elem);
+                    // 添加open类或移除collapsed类
+                    if (elem.classList.contains('toggable') && !elem.classList.contains('open')) {
+                        elem.classList.add('open');
+                        expanded = true;
+                        didExpand = true;
+                    } else if (elem.classList.contains('collapsed')) {
+                        elem.classList.remove('collapsed');
+                        expanded = true;
+                        didExpand = true;
+                    }
+                    
+                    // 如果上述方法都失败，尝试直接点击节点
+                    if (!expanded) {
+                        (elem as HTMLElement).click();
+                        expanded = true;
+                        didExpand = true;
+                    }
+                }
+            } catch (error) {
+                logger.error('展开节点时出错', error);
             }
         });
         
         // 如果展开了新节点，等待DOM更新后再次检查
         if (didExpand) {
+            logger.debug('部分节点已展开，等待DOM更新后继续检查');
             // 使用setTimeout给DOM一些时间进行更新
-            setTimeout(expandNodes, 50);
+            setTimeout(expandNodes, 100);  // 增加延迟时间确保DOM有足够时间更新
         }
     }
     
