@@ -1,16 +1,54 @@
-# ast explorer助手（油猴插件）
+# AST Explorer 助手
 
-# 一、商店安装地址
+一个用于增强 [AST Explorer](https://astexplorer.net/) 网站体验的用户脚本工具。
 
-[https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer%E5%8A%A9%E6%89%8B)
+## 功能特点
 
-# 二、功能
+- **可选择文本**：使AST节点名称可复制，方便在分析时引用节点名称
+- **自定义右键菜单**：提供节点操作的便捷菜单
+  - 复制内容：复制节点的纯文本内容
+  - 复制节点类型：复制节点的类型名称
+  - 复制路径：复制节点的完整路径
+  - 复制完整内容：复制包含子节点的所有内容
+- **元素高亮**：
+  - 鼠标悬停时浅色高亮
+  - 右键点击时明显高亮
+- **增大视图**：隐藏上方工具栏，提供更大的可视区域
 
-提升 [https://astexplorer.net/](https://astexplorer.net/) 的使用体验， 提高分析程序结构的效率。
+## 开发技术
 
-- 隐藏设置一次之后就再也用不到的的banner栏
-- 让右侧的ast树形结构的key能够复制
+- TypeScript
+- Webpack
+- 油猴脚本 (Tampermonkey/Greasemonkey)
 
-![](.README_images/85958755.png)
+## 安装与使用
+
+1. 在浏览器中安装 [Tampermonkey](https://www.tampermonkey.net/) 或 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
+2. 点击 [这里](#) 安装脚本
+3. 访问 [AST Explorer](https://astexplorer.net/) 网站，即可自动启用扩展功能
+
+## 开发
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 开发模式
+
+```bash
+npm run watch
+```
+
+### 构建生产版本
+
+```bash
+npm run build
+```
+
+## 许可证
+
+MIT
 
 
