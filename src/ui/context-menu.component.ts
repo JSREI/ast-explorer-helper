@@ -2,12 +2,54 @@
  * 右键菜单组件
  */
 
-import { findNodeType, getNodePath, getFullNodeContent } from '../utils/nodeInfo';
-import { copyToClipboard } from '../utils/clipboard';
-import { removeHighlight } from '../utils/dom';
+import { findNodeType, getNodePath, getFullNodeContent } from '../ast-node/node-info.service';
+import { copyToClipboard } from '../clipboard/clipboard.service';
+import { removeHighlight } from '../dom-helpers/dom-utils';
 
-// 皇家蓝，带透明度
-const highlightColor = "rgba(65, 105, 225, 0.2)";
+// 自定义类型，扩展HTMLElement
+interface ContextMenuElement extends HTMLElement {
+    targetNode?: HTMLElement;
+}
+
+// 使用更加淡雅的颜色 - 浅灰色半透明
+const highlightColor = "rgba(200, 200, 200, 0.3)";
+
+/**
+ * 递归展开指定节点下的所有子节点
+ * @param node 要展开的节点
+ */
+export function expandAllNodes(node: HTMLElement): void {
+    // 递归展开节点的函数
+    function expandNodes() {
+        // 查找所有折叠的节点并展开
+        const collapsedElements = node.querySelectorAll('.expandable.collapsed');
+        
+        // 如果没有折叠的节点，说明全部展开完毕
+        if (collapsedElements.length === 0) {
+            return;
+        }
+        
+        // 展开找到的所有节点
+        let didExpand = false;
+        collapsedElements.forEach(elem => {
+            // 模拟点击展开图标
+            const expandIcon = elem.querySelector('.disclosure-arrow');
+            if (expandIcon && expandIcon instanceof HTMLElement) {
+                expandIcon.click();
+                didExpand = true;
+            }
+        });
+        
+        // 如果展开了新节点，等待DOM更新后再次检查
+        if (didExpand) {
+            // 使用setTimeout给DOM一些时间进行更新
+            setTimeout(expandNodes, 50);
+        }
+    }
+    
+    // 开始递归展开
+    expandNodes();
+}
 
 /**
  * 创建自定义右键菜单
@@ -25,6 +67,7 @@ export function createContextMenu(): void {
             <div class="menu-item" data-action="copy-type">复制节点类型</div>
             <div class="menu-item" data-action="copy-path">复制路径</div>
             <div class="menu-item" data-action="copy-full">复制完整内容</div>
+            <div class="menu-item" data-action="expand-all">递归展开所有子节点</div>
         </div>
     `;
     document.body.insertAdjacentHTML('beforeend', menuHtml);
@@ -42,13 +85,13 @@ export function createContextMenu(): void {
             background: #f0f0f0;
         }
         
-        /* 悬停高亮效果 */
+        /* 悬停高亮效果 - 使用更淡雅的颜色 */
         .tree-visualization > ul * {
             transition: background-color 0.15s ease;
         }
         
         .tree-visualization > ul *:hover {
-            background-color: rgba(65, 105, 225, 0.1) !important;
+            background-color: rgba(200, 200, 200, 0.2) !important;
         }
         
         /* 右键点击高亮效果 */
@@ -105,6 +148,11 @@ export function createContextMenu(): void {
                     // 复制完整内容（含子节点）
                     const fullContent = getFullNodeContent(targetNode);
                     copyToClipboard(fullContent);
+                    break;
+                
+                case 'expand-all':
+                    // 递归展开所有子节点
+                    expandAllNodes(targetNode);
                     break;
             }
             

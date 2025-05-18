@@ -8,7 +8,9 @@
   "document": "https://github.com/CC11001100/ast-explorer-helper",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "watch": "webpack --watch --config webpack.dev.js"
+    "watch": "webpack --watch --config webpack.dev.js",
+    "dev": "webpack --config webpack.dev.js && node dev-script.js",
+    "dev:watch": "webpack --watch --config webpack.dev.js & node dev-script.js"
   },
   "author": "CC11001100",
   "license": "MIT",

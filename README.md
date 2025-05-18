@@ -51,4 +51,8 @@ npm run build
 
 MIT
 
+## 致谢
+
+本项目基于 [TypeScript UserScript Template](https://github.com/JSREI/typescript-userscript-template) 构建，采用了该模板仓库的TypeScript和Webpack配置。该模板提供了模块化开发油猴脚本的最佳实践，使我们能够更高效地开发和维护这个项目。
+
 

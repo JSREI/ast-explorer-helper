@@ -2,12 +2,24 @@
  * DOM 操作相关的工具函数
  */
 
+import { logger } from '../logger';
+
+/**
+ * 自定义类型，扩展HTMLElement
+ */
+interface ContextMenuElement extends HTMLElement {
+    targetNode?: HTMLElement;
+}
+
 /**
  * 使节点内容可选
  * @param doneKey 标记属性名
  */
 export async function setSelectable(doneKey: string = "cc11001100_select_enable"): Promise<void> {
-    document.querySelectorAll<HTMLElement>(".tree-visualization > ul *").forEach(element => {
+    const elements = document.querySelectorAll<HTMLElement>(".tree-visualization > ul *");
+    let newElementsCount = 0;
+
+    elements.forEach(element => {
         if (element.getAttribute(doneKey)) {
             return;
         }
@@ -16,7 +28,12 @@ export async function setSelectable(doneKey: string = "cc11001100_select_enable"
         
         // 添加右键菜单事件
         element.addEventListener('contextmenu', handleRightClick);
+        newElementsCount++;
     });
+
+    if (newElementsCount > 0) {
+        logger.debug(`处理了 ${newElementsCount} 个新节点，使其内容可选`);
+    }
 }
 
 /**
@@ -28,7 +45,10 @@ export function handleRightClick(this: HTMLElement, e: MouseEvent): void {
     e.stopPropagation();
     
     const menu = document.getElementById("ast-context-menu") as ContextMenuElement | null;
-    if (!menu) return;
+    if (!menu) {
+        logger.warn('未找到右键菜单元素');
+        return;
+    }
     
     // 高亮当前节点
     highlightNode(this);
@@ -40,6 +60,8 @@ export function handleRightClick(this: HTMLElement, e: MouseEvent): void {
     menu.style.left = `${e.pageX}px`;
     menu.style.top = `${e.pageY}px`;
     menu.style.display = 'block';
+
+    logger.debug('显示右键菜单，目标节点:', this.tagName, this.textContent?.trim().substring(0, 30));
 }
 
 /**
@@ -60,6 +82,8 @@ export function highlightNode(node: HTMLElement): void {
     
     // 添加高亮类
     node.classList.add('node-highlighted');
+    
+    logger.debug('节点高亮:', node.tagName);
 }
 
 /**
@@ -68,6 +92,7 @@ export function highlightNode(node: HTMLElement): void {
 export function removeHighlight(): void {
     if (currentHighlightedNode) {
         currentHighlightedNode.classList.remove('node-highlighted');
+        logger.debug('取消节点高亮');
         currentHighlightedNode = null;
     }
 }

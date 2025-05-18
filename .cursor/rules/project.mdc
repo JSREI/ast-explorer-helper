@@ -1,0 +1,11 @@
+---
+description: 项目架构
+globs: *
+alwaysApply: false
+---
+- 这是一个使用TypeScript开发的油猴脚本，用于改善 https://astexplorer.net/ 的使用体验 
+- data/astexplorer.net页面样例.html 是页面的一个实际的例子，当需要查看页面源代码的时候请参考此文件的html结构 
+- src/logger 是统一的日志模块，需要打印内容时请使用统一的日志模块来打印 
+
+
+
