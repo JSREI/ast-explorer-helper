@@ -1,0 +1,28 @@
+{
+  "name": "ast-explorer-helper",
+  "version": "0.4.0",
+  "description": "用于分析ast时辅助提高效率，支持复制和右键菜单，以及元素高亮",
+  "main": "dist/index.js",
+  "repository": "https://github.com/CC11001100/ast-explorer-helper",
+  "namespace": "https://github.com/CC11001100/ast-explorer-helper",
+  "document": "https://github.com/CC11001100/ast-explorer-helper",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "watch": "webpack --watch --config webpack.dev.js"
+  },
+  "author": "CC11001100",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "@types/tampermonkey": "^5.0.4",
+    "@types/webpack": "^5.28.5",
+    "css-loader": "^6.9.0",
+    "file-loader": "^6.2.0",
+    "style-loader": "^3.3.4",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.9.0"
+  }
+} 
