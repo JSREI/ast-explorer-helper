@@ -2,5 +2,5 @@
  * UI组件模块入口
  */
 
-export * from './context-menu.component';
-export * from './settings-ui.component'; 
+export { createContextMenu } from './context-menu.component';
+export { createSettingsUI } from './settings-ui'; 
