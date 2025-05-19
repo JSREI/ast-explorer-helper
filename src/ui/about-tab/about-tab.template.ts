@@ -45,30 +45,34 @@ export function createAboutTabContent(): string {
                             </div>
                             
                             <div class="github-stats">
-                                <div class="stat-item" title="Star数">
+                                <a href="https://github.com/JSREI/ast-explorer-helper/stargazers" target="_blank" class="stat-item star-stat" title="GitHub Star数 - 点击查看详情">
                                     <svg class="stat-icon" viewBox="0 0 16 16" width="16" height="16">
                                         <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
                                     </svg>
                                     <span>${repoStats.stars || '暂未获取'}</span>
-                                </div>
-                                <div class="stat-item" title="Fork数">
+                                    <span class="stat-label">Stars</span>
+                                </a>
+                                <a href="https://github.com/JSREI/ast-explorer-helper/forks" target="_blank" class="stat-item fork-stat" title="GitHub Fork数 - 点击查看详情">
                                     <svg class="stat-icon" viewBox="0 0 16 16" width="16" height="16">
                                         <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path>
                                     </svg>
                                     <span>${repoStats.forks || '暂未获取'}</span>
-                                </div>
-                                <div class="stat-item" title="Issue数">
+                                    <span class="stat-label">Forks</span>
+                                </a>
+                                <a href="https://github.com/JSREI/ast-explorer-helper/issues" target="_blank" class="stat-item issue-stat" title="GitHub Issue数 - 点击查看详情">
                                     <svg class="stat-icon" viewBox="0 0 16 16" width="16" height="16">
                                         <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"></path>
                                     </svg>
                                     <span>${repoStats.issues || '暂未获取'}</span>
-                                </div>
-                                <div class="stat-item" title="最近更新">
+                                    <span class="stat-label">Issues</span>
+                                </a>
+                                <a href="https://github.com/JSREI/ast-explorer-helper/commits/main" target="_blank" class="stat-item update-stat" title="最近更新时间 - 点击查看提交历史">
                                     <svg class="stat-icon" viewBox="0 0 16 16" width="16" height="16">
                                         <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"></path>
                                     </svg>
                                     <span>${repoStats.updatedAt || '暂未获取'}</span>
-                                </div>
+                                    <span class="stat-label">更新于</span>
+                                </a>
                             </div>
                         </div>
                     </div>
