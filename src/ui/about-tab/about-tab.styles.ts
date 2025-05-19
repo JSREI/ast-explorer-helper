@@ -257,6 +257,7 @@ export function getAboutTabStyles(): string {
             justify-content: center;
         }
         
+        /* 修复GitHub按钮样式 */
         #ast-settings-modal .org-action-button {
             display: inline-flex;
             align-items: center;
@@ -268,6 +269,33 @@ export function getAboutTabStyles(): string {
             font-weight: 500;
             transition: all 0.2s ease;
             box-shadow: 0 3px 10px rgba(74, 144, 226, 0.3);
+            text-align: center;
+            justify-content: center;
+            min-width: 200px;
+        }
+        
+        #ast-settings-modal .org-action-button .button-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        #ast-settings-modal .org-action-button .button-text {
+            display: inline-block;
+            color: white;
+            white-space: nowrap;
+        }
+        
+        #ast-settings-modal .org-action-button.fixed-button {
+            width: auto;
+            min-width: 200px;
+            max-width: 100%;
+            overflow: visible;
+        }
+        
+        #ast-settings-modal .org-action-button.fixed-button .github-icon {
+            color: white;
         }
         
         #ast-settings-modal .org-action-button:hover {
