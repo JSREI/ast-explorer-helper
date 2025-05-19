@@ -17,7 +17,7 @@ export function getAboutTabStyles(): string {
         }
         
         #ast-settings-modal .about-content {
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
@@ -38,7 +38,7 @@ export function getAboutTabStyles(): string {
             text-decoration: underline;
         }
         
-        /* 仓库信息部分样式 */
+        /* 统一卡片基础样式 */
         #ast-settings-modal .repo-info-section, 
         #ast-settings-modal .org-info-section, 
         #ast-settings-modal .community-section {
@@ -48,62 +48,153 @@ export function getAboutTabStyles(): string {
         #ast-settings-modal .repo-card, 
         #ast-settings-modal .org-card, 
         #ast-settings-modal .community-card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 22px;
+            max-width: 600px;
+            margin: 0 auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
         
         #ast-settings-modal .repo-card:hover, 
         #ast-settings-modal .org-card:hover, 
         #ast-settings-modal .community-card:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
         
+        /* 卡片顶部渐变条 */
+        #ast-settings-modal .repo-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4a90e2, #6a3de8);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        #ast-settings-modal .org-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f7df1e, #e34c26);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        #ast-settings-modal .community-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #25D366, #0088cc);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        /* 统一卡片头部样式 */
         #ast-settings-modal .repo-header, 
         #ast-settings-modal .org-header, 
         #ast-settings-modal .community-header {
-            padding: 20px;
-            border-bottom: 1px solid #eaeaea;
-            position: relative;
-        }
-        
-        /* 仓库Logo/图标样式 */
-        #ast-settings-modal .repo-logo, 
-        #ast-settings-modal .org-logo, 
-        #ast-settings-modal .community-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             margin-bottom: 15px;
+            position: relative;
+            border-bottom: none;
+            padding: 0;
+        }
+        
+        /* 图标/Logo统一样式 */
+        #ast-settings-modal .repo-logo, 
+        #ast-settings-modal .community-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
             color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        #ast-settings-modal .repo-logo:hover, 
+        #ast-settings-modal .community-icon:hover {
+            transform: rotate(10deg);
         }
         
         #ast-settings-modal .repo-logo svg, 
         #ast-settings-modal .community-icon svg {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
+            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
         }
         
+        /* 组织Logo特殊样式 */
+        #ast-settings-modal .org-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        
+        /* JSREI组织logo样式 */
+        #ast-settings-modal .jsrei-logo {
+            width: 64px;
+            height: 64px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background-color: white;
+            padding: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        #ast-settings-modal .jsrei-logo:hover {
+            border-color: #4a90e2;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+            transform: scale(1.05);
+        }
+        
+        /* 徽章样式统一 */
         #ast-settings-modal .repo-badge, 
         #ast-settings-modal .org-badge {
             display: inline-block;
             padding: 3px 8px;
-            background-color: #e3f2fd;
-            color: #1976d2;
-            border-radius: 4px;
-            font-size: 12px;
+            border-radius: 12px;
+            font-size: 11px;
             font-weight: 500;
-            margin-left: 10px;
-            vertical-align: middle;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
+        #ast-settings-modal .repo-badge {
+            background-color: #4a90e2;
+            color: white;
+        }
+        
+        #ast-settings-modal .org-badge {
+            background-color: #4caf50;
+            color: white;
+        }
+        
+        /* 标题统一样式 */
         #ast-settings-modal .repo-header h4, 
         #ast-settings-modal .org-header h4, 
         #ast-settings-modal .community-header h4,
@@ -119,17 +210,21 @@ export function getAboutTabStyles(): string {
             margin: 5px 0 0;
             color: #666;
             font-size: 0.9rem;
+            text-align: center;
         }
         
         /* 仓库统计相关样式 - 增强版 */
         #ast-settings-modal .repo-stats {
-            padding: 15px 20px;
-            background-color: #fafbfc;
+            margin: 15px auto;
+            max-width: 500px;
+            padding: 15px 0;
+            background-color: transparent;
         }
         
         #ast-settings-modal .repo-link-wrapper {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 15px;
             margin-bottom: 15px;
         }
         
@@ -137,12 +232,14 @@ export function getAboutTabStyles(): string {
         #ast-settings-modal .star-button {
             display: inline-flex;
             align-items: center;
-            padding: 8px 15px;
-            border-radius: 6px;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
             font-size: 14px;
             font-weight: 500;
             text-decoration: none;
             transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
         
         #ast-settings-modal .repo-link {
@@ -153,6 +250,8 @@ export function getAboutTabStyles(): string {
         #ast-settings-modal .repo-link:hover {
             background-color: #000;
             text-decoration: none !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
         
         #ast-settings-modal .star-button {
@@ -164,6 +263,8 @@ export function getAboutTabStyles(): string {
         #ast-settings-modal .star-button:hover {
             background-color: #e6ebf1;
             text-decoration: none !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
         
         #ast-settings-modal .github-icon, 
@@ -174,13 +275,13 @@ export function getAboutTabStyles(): string {
         /* 改进的统计数据项样式 */
         #ast-settings-modal .github-stats {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
+            margin-top: 20px;
         }
         
         #ast-settings-modal .stat-item {
-            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -290,105 +391,16 @@ export function getAboutTabStyles(): string {
         }
         
         /* 组织信息部分样式 */
-        #ast-settings-modal .org-card {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            padding: 22px;
-            max-width: 600px;
-            margin: 0 auto;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        #ast-settings-modal .org-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        #ast-settings-modal .org-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #f7df1e, #e34c26);
-            border-radius: 3px 3px 0 0;
-        }
-        
-        #ast-settings-modal .org-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-bottom: 15px;
-            position: relative;
-        }
-        
-        #ast-settings-modal .org-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-bottom: 10px;
-        }
-        
-        /* JSREI组织logo样式 */
-        #ast-settings-modal .jsrei-logo {
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            background-color: white;
-            padding: 4px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: float 5s ease-in-out infinite;
-        }
-        
-        #ast-settings-modal .jsrei-logo:hover {
-            border-color: #4a90e2;
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
-            transform: scale(1.05);
-        }
-        
-        /* 旧的JS logo样式保留，但不再使用 */
-        #ast-settings-modal .js-logo {
-            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
-            animation: float 5s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-        
-        #ast-settings-modal .org-badge {
-            background-color: #4caf50;
-            color: white;
-            font-size: 11px;
-            font-weight: 500;
-            padding: 2px 8px;
-            border-radius: 12px;
-            margin-top: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
         #ast-settings-modal .org-content {
             margin: 15px 0;
         }
         
         #ast-settings-modal .org-description {
             margin-bottom: 20px;
+        }
+        
+        #ast-settings-modal .org-description p {
+            text-align: center;
         }
         
         #ast-settings-modal .org-features {
@@ -443,7 +455,7 @@ export function getAboutTabStyles(): string {
             justify-content: center;
         }
         
-        /* 修复GitHub按钮样式 */
+        /* GitHub按钮样式 */
         #ast-settings-modal .org-action-button {
             display: inline-flex;
             align-items: center;
@@ -496,66 +508,17 @@ export function getAboutTabStyles(): string {
             box-shadow: 0 2px 5px rgba(74, 144, 226, 0.3);
         }
         
-        /* 交流群卡片式布局样式 */
-        #ast-settings-modal .community-card {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            padding: 22px;
-            max-width: 600px;
-            margin: 0 auto;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        #ast-settings-modal .community-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        #ast-settings-modal .community-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #25D366, #0088cc);
-            border-radius: 3px 3px 0 0;
-        }
-        
-        #ast-settings-modal .community-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        #ast-settings-modal .community-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background-color: #f5f7fa;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        #ast-settings-modal .community-icon:hover {
-            transform: scale(1.05) rotate(5deg);
-        }
-        
-        #ast-settings-modal .community-icon svg {
-            width: 32px;
-            height: 32px;
-            color: #25D366;
-            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+        /* 交流群样式 */
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
         
         #ast-settings-modal .community-section h4.section-title {
@@ -624,7 +587,7 @@ export function getAboutTabStyles(): string {
         #ast-settings-modal .qr-item {
             flex: 1;
             min-width: 200px;
-            max-width: 300px;
+            max-width: 260px;
             margin: 0 auto;
             padding: 15px;
             background-color: rgba(255, 255, 255, 0.6);
@@ -685,13 +648,6 @@ export function getAboutTabStyles(): string {
         #ast-settings-modal .tg-link:hover {
             color: #005580;
             transform: translateX(2px);
-        }
-        
-        /* 组织信息样式 */
-        #ast-settings-modal .org-info-section p {
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
     `;
 } 
