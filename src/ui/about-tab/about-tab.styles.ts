@@ -51,6 +51,7 @@ export function getAboutTabStyles(): string {
         
         #ast-settings-modal .community-section {
             border-bottom: none;
+            padding-bottom: 0;
         }
         
         /* 仓库信息卡片样式 - 增强版 */
@@ -423,7 +424,88 @@ export function getAboutTabStyles(): string {
             box-shadow: 0 2px 5px rgba(74, 144, 226, 0.3);
         }
         
-        /* 二维码横向布局样式 */
+        /* 交流群卡片式布局样式 */
+        #ast-settings-modal .community-card {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 22px;
+            max-width: 600px;
+            margin: 0 auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #ast-settings-modal .community-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        #ast-settings-modal .community-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #25D366, #0088cc);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        #ast-settings-modal .community-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        #ast-settings-modal .community-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #f5f7fa;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        #ast-settings-modal .community-icon:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+        
+        #ast-settings-modal .community-icon svg {
+            width: 32px;
+            height: 32px;
+            color: #25D366;
+            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+        }
+        
+        #ast-settings-modal .community-section h4.section-title {
+            display: inline-block;
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            color: #333;
+            position: relative;
+        }
+
+        #ast-settings-modal .community-section h4.section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, #25D366, #0088cc);
+            border-radius: 2px;
+        }
+        
+        /* 二维码横向布局样式 - 增强版 */
         #ast-settings-modal .qr-code-container {
             display: flex;
             flex-direction: column;
@@ -436,6 +518,35 @@ export function getAboutTabStyles(): string {
             justify-content: center;
             flex-wrap: wrap;
             gap: 20px;
+            margin-bottom: 10px;
+        }
+        
+        #ast-settings-modal .qr-section:first-child {
+            position: relative;
+        }
+        
+        #ast-settings-modal .qr-section-title {
+            width: 100%;
+            text-align: left;
+            margin: 5px 0 15px 5px;
+            font-weight: 500;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        #ast-settings-modal .qr-section-title svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        #ast-settings-modal .qr-section-title.wechat {
+            color: #25D366;
+        }
+        
+        #ast-settings-modal .qr-section-title.telegram {
+            color: #0088cc;
         }
         
         #ast-settings-modal .qr-item {
@@ -443,23 +554,65 @@ export function getAboutTabStyles(): string {
             min-width: 200px;
             max-width: 300px;
             margin: 0 auto;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+        
+        #ast-settings-modal .qr-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            background-color: white;
+            border-color: #e0e0e0;
+        }
+        
+        #ast-settings-modal .qr-item p {
+            font-size: 14px;
+            margin: 0 0 10px 0;
+            color: #666;
         }
         
         #ast-settings-modal .qr-code {
             margin: 10px auto;
             display: inline-block;
+            padding: 8px;
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        #ast-settings-modal .qr-item:hover .qr-code {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-color: #ddd;
         }
         
         #ast-settings-modal .qr-code img {
-            width: 180px;
+            width: 150px;
             border-radius: 4px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
         #ast-settings-modal .qr-code img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        #ast-settings-modal .tg-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin: 5px 0;
+            font-weight: 500;
+            color: #0088cc;
+            transition: all 0.2s;
+        }
+        
+        #ast-settings-modal .tg-link:hover {
+            color: #005580;
+            transform: translateX(2px);
         }
         
         /* 组织信息样式 */

@@ -133,34 +133,64 @@ export function createAboutTabContent(): string {
                     </div>
                 </section>
                 
-                <!-- 交流群信息部分 - 优化为横向布局 -->
+                <!-- 交流群信息部分 - 卡片式设计 -->
                 <section class="community-section">
-                    <h4 class="section-title">逆向技术交流群</h4>
-                    
-                    <div class="qr-code-container">
-                        <!-- 微信部分 -->
-                        <div class="qr-section">
-                            <div class="qr-item">
-                                <p>扫码加入逆向技术微信交流群：</p>
-                                <div class="qr-code">
-                                    <img src="https://cdn.jsdelivr.net/gh/JSREI/.github/profile/README.assets/image-20241016230653669.png" alt="逆向技术微信交流群二维码">
+                    <div class="community-card">
+                        <div class="community-header">
+                            <div class="community-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="currentColor" d="M12 2c1.35 0 2.6.45 3.6 1.2L12 7.8 8.4 3.2C9.4 2.45 10.65 2 12 2m9 15c0 1.66-1.34 3-3 3H6c-1.66 0-3-1.34-3-3v-4.85c0-.3.15-.57.4-.74L12 5l8.6 6.41c.25.17.4.44.4.74V17z"/>
+                                </svg>
+                            </div>
+                            
+                            <h4 class="section-title">逆向技术交流群</h4>
+                            <p>加入我们的技术交流社区，分享经验与知识</p>
+                        </div>
+                        
+                        <div class="qr-code-container">
+                            <!-- 微信部分 -->
+                            <div class="qr-section">
+                                <div class="qr-section-title wechat">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M8.2 13.3c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9m4.9 0c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9m3-6.5c-3.6 0-6.5 2.4-6.5 5.4 0 .5.1 1 .2 1.5-2.3-.1-4.6-1.2-6-2.9a1.61 1.61 0 0 0-.2.8c0 1 .9 1.9 2.2 2.4-.8 0-1.5-.1-2.1-.4 0 1.4 2 2.5 3.6 2.8-.4.1-.9.2-1.4.2-.3 0-.5 0-.8-.1.4 1.1 1.4 1.9 2.6 2-1 .7-2.2 1.1-3.6 1.1H3c1.3.8 2.8 1.3 4.4 1.3 5.3 0 8.2-4.1 8.2-7.6v-.3c.6-.4 1-1 1.4-1.6-.5.2-1 .4-1.6.5.6-.4 1-1 1.2-1.7-.6.3-1.2.6-1.9.7"/></path>
+                                    </svg>
+                                    微信交流群
+                                </div>
+                                
+                                <div class="qr-item">
+                                    <p>扫码加入逆向技术微信交流群：</p>
+                                    <div class="qr-code">
+                                        <img src="https://cdn.jsdelivr.net/gh/JSREI/.github/profile/README.assets/image-20241016230653669.png" alt="逆向技术微信交流群二维码">
+                                    </div>
+                                </div>
+                                
+                                <div class="qr-item">
+                                    <p>如群二维码过期，可以加我个人微信，发送【逆向群】拉你进群：</p>
+                                    <div class="qr-code">
+                                        <img src="https://cdn.jsdelivr.net/gh/JSREI/.github/profile/README.assets/image-20231030132026541-7614065.png" alt="个人微信二维码">
+                                    </div>
                                 </div>
                             </div>
                             
-                            <div class="qr-item">
-                                <p>如群二维码过期，可以加我个人微信，发送【逆向群】拉你进群：</p>
-                                <div class="qr-code">
-                                    <img src="https://cdn.jsdelivr.net/gh/JSREI/.github/profile/README.assets/image-20231030132026541-7614065.png" alt="个人微信二维码">
+                            <!-- Telegram部分 -->
+                            <div class="qr-section">
+                                <div class="qr-section-title telegram">
+                                    <svg viewBox="0 0 24 24" width="18" height="18">
+                                        <path fill="currentColor" d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path>
+                                    </svg>
+                                    Telegram 交流群
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Telegram部分 -->
-                        <div class="qr-section">
-                            <div class="qr-item">
-                                <p><a href="https://t.me/jsreijsrei" target="_blank">点此</a>或扫码加入TG交流群：</p>
-                                <div class="qr-code">
-                                    <img src="https://cdn.jsdelivr.net/gh/JSREI/.github/profile/README.assets/image-20241016231143315.png" alt="TG交流群二维码">
+                                
+                                <div class="qr-item">
+                                    <p><a href="https://t.me/jsreijsrei" target="_blank" class="tg-link">
+                                        <svg viewBox="0 0 24 24" width="14" height="14">
+                                            <path fill="currentColor" d="M14 3v2h3.59l-9.83 9.83-1.41-1.41L16.17 3H14V1h6v6h-2V3.41l-9.83 9.83 1.41 1.41L20.41 4H24v2h2V0h-6v2h-6z"/>
+                                        </svg>
+                                        点此直接加入
+                                    </a> 或扫码加入 TG 交流群：</p>
+                                    <div class="qr-code">
+                                        <img src="https://cdn.jsdelivr.net/gh/JSREI/.github/profile/README.assets/image-20241016231143315.png" alt="TG交流群二维码">
+                                    </div>
                                 </div>
                             </div>
                         </div>
