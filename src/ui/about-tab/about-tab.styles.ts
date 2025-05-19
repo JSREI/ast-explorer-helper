@@ -167,6 +167,24 @@ export function getAboutTabStyles(): string {
             margin-bottom: 10px;
         }
         
+        /* JSREI组织logo样式 */
+        #ast-settings-modal .jsrei-logo {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            background-color: white;
+            padding: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        #ast-settings-modal .jsrei-logo:hover {
+            border-color: #4a90e2;
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+            transform: scale(1.05);
+        }
+        
+        /* 旧的JS logo样式保留，但不再使用 */
         #ast-settings-modal .js-logo {
             filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
             animation: float 5s ease-in-out infinite;
