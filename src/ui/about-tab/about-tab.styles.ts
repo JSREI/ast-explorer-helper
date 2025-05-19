@@ -53,7 +53,89 @@ export function getAboutTabStyles(): string {
             border-bottom: none;
         }
         
-        /* 仓库统计数据样式 */
+        /* 仓库信息卡片样式 - 增强版 */
+        #ast-settings-modal .repo-info-section {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 30px;
+        }
+        
+        #ast-settings-modal .repo-card {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 22px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #ast-settings-modal .repo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        #ast-settings-modal .repo-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4a90e2, #6a3de8);
+            border-radius: 3px 3px 0 0;
+        }
+        
+        #ast-settings-modal .repo-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        #ast-settings-modal .repo-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            width: 60px;
+            height: 60px;
+            background-color: #f5f7fa;
+            border-radius: 50%;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        #ast-settings-modal .repo-logo:hover {
+            transform: rotate(10deg);
+        }
+        
+        #ast-settings-modal .repo-logo svg {
+            width: 32px;
+            height: 32px;
+            color: #4a90e2;
+            filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+        }
+        
+        #ast-settings-modal .repo-badge {
+            background-color: #4a90e2;
+            color: white;
+            font-size: 11px;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(74, 144, 226, 0.2);
+            display: inline-block;
+        }
+        
+        /* 仓库统计数据样式 - 增强版 */
         #ast-settings-modal .repo-stats {
             margin: 15px auto;
             max-width: 500px;
@@ -72,16 +154,20 @@ export function getAboutTabStyles(): string {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 6px 12px;
+            padding: 8px 16px;
             background-color: #f5f7fa;
-            border-radius: 6px;
-            transition: background-color 0.2s;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            font-weight: 500;
         }
         
         #ast-settings-modal .repo-link:hover,
         #ast-settings-modal .star-button:hover {
             background-color: #e8eef7;
             text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
         
         #ast-settings-modal .star-button {
@@ -98,17 +184,26 @@ export function getAboutTabStyles(): string {
             justify-content: center;
             flex-wrap: wrap;
             gap: 12px;
+            margin-top: 20px;
         }
         
         #ast-settings-modal .stat-item {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             background-color: #f5f7fa;
-            padding: 6px 10px;
-            border-radius: 6px;
+            padding: 8px 14px;
+            border-radius: 8px;
             font-size: 14px;
             color: #555;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+        
+        #ast-settings-modal .stat-item:hover {
+            background-color: #e8eef7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
         }
         
         #ast-settings-modal .github-icon,
