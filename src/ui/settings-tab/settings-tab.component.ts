@@ -16,12 +16,21 @@ export { createSettingsTabContent } from './settings-tab.template';
  * @returns 更新的设置对象
  */
 export function collectSettingsFromForm(): Partial<Settings> {
-    const hideToolbar = (document.getElementById('hide-toolbar') as HTMLInputElement)?.checked ?? true;
-    const enableNodeSelection = (document.getElementById('enable-node-selection') as HTMLInputElement)?.checked ?? true;
+    
+    const hideToolbarElement = document.getElementById('hide-toolbar') as HTMLInputElement;
+    console.log('🔍 隐藏工具栏复选框元素:', hideToolbarElement);
+    
+    // 移除视觉反馈，避免用户误解
+    // 仅在控制台打印日志，不在界面显示信息
+    console.log('🔍 正在读取设置选项状态...');
+    
+    // 确保即使元素不存在也能获取到默认值
+    const hideToolbar = hideToolbarElement?.checked ?? true;
+    
+    console.log('✅ 收集到的hideToolbar值:', hideToolbar);
     
     return {
-        hideToolbar,
-        enableNodeSelection
+        hideToolbar
     };
 }
 

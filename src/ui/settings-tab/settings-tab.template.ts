@@ -19,13 +19,6 @@ export function createSettingsTabContent(settings: Settings): string {
                 </label>
                 <p class="description">隐藏AST Explorer顶部工具栏，增大视图空间</p>
             </div>
-            <div class="setting-item">
-                <label>
-                    <input type="checkbox" id="enable-node-selection" ${settings.enableNodeSelection ? 'checked' : ''}>
-                    允许节点内容可选择/复制
-                </label>
-                <p class="description">使AST树中的节点文本可选择、复制</p>
-            </div>
         </div>
     `;
 } 

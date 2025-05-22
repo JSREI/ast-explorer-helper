@@ -4,5 +4,6 @@
 
 export { 
     getAboutTabStyles,
-    createAboutTabContent
+    createAboutTabContent,
+    getRepoStatsFromCache
 } from './about-tab.component'; 

@@ -209,7 +209,7 @@ export function createAboutTabContent(): string {
  * 获取仓库统计信息的缓存数据
  * 如果缓存不存在或已过期，则返回空数据并触发异步更新
  */
-function getRepoStatsFromCache(): any {
+export function getRepoStatsFromCache(): any {
     const CACHE_KEY = 'JSREI_repo_stats';
     const CACHE_EXPIRY = 60 * 60 * 1000; // 1小时缓存
     
@@ -323,9 +323,9 @@ function updateRepoStatsInDOM(data: any): void {
         const statItems = aboutTab.querySelectorAll('.github-stats .stat-item span');
         if (statItems.length >= 4) {
             statItems[0].textContent = data.stars?.toString() || '暂未获取';
-            statItems[1].textContent = data.forks?.toString() || '暂未获取';
-            statItems[2].textContent = data.issues?.toString() || '暂未获取';
-            statItems[3].textContent = data.updatedAt || '暂未获取';
+            statItems[2].textContent = data.forks?.toString() || '暂未获取';
+            statItems[4].textContent = data.issues?.toString() || '暂未获取';
+            statItems[6].textContent = data.updatedAt || '暂未获取';
         }
     } catch (error) {
         console.error('更新DOM中的仓库统计数据失败:', error);
