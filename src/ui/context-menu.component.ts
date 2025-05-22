@@ -4,7 +4,7 @@
 
 import { findNodeType, getNodePath, getFullNodeContent } from '../ast-node/node-info.service';
 import { copyToClipboard } from '../clipboard/clipboard.service';
-import { removeHighlight } from '../dom-helpers/dom-utils';
+import { removeHighlight, highlightNodePath } from '../dom-helpers/dom-utils';
 import { logger } from '../logger';
 
 // 自定义类型，扩展HTMLElement
@@ -132,17 +132,24 @@ export function createContextMenu(): void {
         
         /* 悬停高亮效果 - 使用更淡雅的颜色 */
         .tree-visualization > ul * {
-            transition: background-color 0.15s ease;
+            transition: color 0.15s ease;
         }
         
-        .tree-visualization > ul *:hover {
-            background-color: rgba(200, 200, 200, 0.2) !important;
-        }
-        
-        /* 右键点击高亮效果 */
+        /* 节点类型名称高亮效果 */
         .node-highlighted {
-            background-color: ${highlightColor} !important;
-            border-radius: 3px;
+            color: #e41e3f !important; /* 红色文字 */
+            font-weight: bold !important;
+            text-decoration: underline !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+        
+        /* 父节点路径高亮样式 */
+        .parent-node-highlight {
+            color: #ff6600 !important; /* 橙色文字 */
+            font-weight: bold !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
         }
     `;
     document.head.appendChild(style);
@@ -169,6 +176,9 @@ export function createContextMenu(): void {
             
             const targetNode = this.targetNode;
             if (!targetNode) return;
+            
+            // 在菜单点击时高亮当前节点
+            highlightNodePath(targetNode);
             
             switch(action) {
                 case 'copy-content':
