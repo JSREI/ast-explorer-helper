@@ -13,7 +13,17 @@ export function findNodeType(node: HTMLElement): string {
     // 提取出 "Identifier"
     
     // 首先检查是否有type字段
-    const typeKeyElem = node.querySelector('.key:contains("type")');
+    // 修复选择器，使用标准DOM API而不是jQuery选择器
+    const keyElements = node.querySelectorAll('.key');
+    let typeKeyElem = null;
+    for (let i = 0; i < keyElements.length; i++) {
+        const elem = keyElements[i];
+        if (elem.textContent?.trim() === 'type') {
+            typeKeyElem = elem;
+            break;
+        }
+    }
+    
     if (typeKeyElem) {
         const valueElem = typeKeyElem.nextElementSibling?.nextElementSibling;
         if (valueElem && valueElem.classList.contains('value')) {
@@ -43,33 +53,88 @@ export function findNodeType(node: HTMLElement): string {
  * @returns 节点路径字符串
  */
 export function getNodePath(node: HTMLElement): string {
-    // 查找节点的祖先，构建节点路径
-    const path: string[] = [];
-    let current: HTMLElement | null = node;
+    // 完全重写路径生成逻辑，确保正确反映AST结构
     
-    while (current && !current.classList.contains('tree-visualization')) {
-        // 检查是否包含键值对
-        const keyElement = current.querySelector('.key');
-        if (keyElement) {
-            const key = keyElement.textContent?.trim();
-            if (key) {
-                // 如果是数组元素，使用索引表示
-                if (key.match(/^\d+$/)) {
-                    path.unshift(`[${key}]`);
-                } else {
-                    path.unshift(`.${key}`);
+    // 1. 找到节点所在的AST节点（entry元素）
+    const astNode = node.closest('.entry');
+    if (!astNode) return '';
+    
+    // 2. 构建路径
+    const pathParts: string[] = [];
+    let current: Element | null = astNode;
+    
+    // 从当前节点向上遍历，直到树的根节点
+    while (current && !current.closest('.tree-visualization')) {
+        // 查找此节点的类型
+        let nodeType = '';
+        const typeKey = findKeyWithText(current, 'type');
+        if (typeKey) {
+            const valueElem = typeKey.nextElementSibling?.nextElementSibling;
+            if (valueElem && valueElem.classList.contains('value')) {
+                nodeType = valueElem.textContent?.replace(/['"]/g, '') || '';
+            }
+        }
+        
+        // 查找节点在父节点中的位置（属性名或数组索引）
+        let nodeName = '';
+        const parentNode: Element | null = current.parentElement?.closest('.entry') || null;
+        if (parentNode) {
+            // 查找节点在父对象的位置
+            const keyValuePairs: Element[] = Array.from(parentNode.querySelectorAll(':scope > .value-body > .entry'));
+            for (let i = 0; i < keyValuePairs.length; i++) {
+                if (keyValuePairs[i] === current) {
+                    // 找到了节点位置
+                    // 检查这是对象属性还是数组元素
+                    const isArray = !!parentNode.querySelector(':scope > .prefix')?.textContent?.trim().startsWith('[');
+                    
+                    if (isArray) {
+                        nodeName = `[${i}]`;
+                    } else {
+                        // 对象属性
+                        const keyElem = keyValuePairs[i].querySelector(':scope > .key');
+                        if (keyElem) {
+                            nodeName = keyElem.textContent?.trim() || '';
+                        }
+                    }
+                    break;
                 }
             }
-        } else if (current.parentElement?.classList.contains('tree-visualizatio')) {
-            // 如果是根节点
-            path.unshift('root');
+        }
+        
+        // 构建路径段
+        if (nodeType && nodeName) {
+            pathParts.unshift(`${nodeName} (${nodeType})`);
+        } else if (nodeType) {
+            pathParts.unshift(nodeType);
+        } else if (nodeName) {
+            pathParts.unshift(nodeName);
         }
         
         // 移动到父节点
-        current = current.parentElement;
+        const parent: Element | null = current.parentElement?.closest('.entry') || null;
+        if (!parent) break;
+        
+        current = parent;
     }
     
-    return path.join('');
+    // 3. 返回格式化的路径
+    return pathParts.length > 0 ? pathParts.join(' > ') : '根节点';
+}
+
+/**
+ * 查找具有特定文本内容的.key元素
+ * @param node 当前节点
+ * @param text 要查找的文本
+ * @returns 找到的元素或null
+ */
+function findKeyWithText(node: Element, text: string): Element | null {
+    const keys = node.querySelectorAll('.key');
+    for (let i = 0; i < keys.length; i++) {
+        if (keys[i].textContent?.trim() === text) {
+            return keys[i];
+        }
+    }
+    return null;
 }
 
 /**
