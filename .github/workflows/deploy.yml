@@ -48,6 +48,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: dist
           force_orphan: true # 确保使用干净的 gh-pages 分支
           commit_message: "deploy: 更新 GitHub Pages 站点" 
