@@ -13,8 +13,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
     clean: true,
-    publicPath: baseUrl,
-    assetModuleFilename: 'assets/[name][ext]'
+    publicPath: baseUrl
   },
   module: {
     rules: [
@@ -44,7 +43,7 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|mov)$/i,
         type: 'asset/resource'
       }
     ]
