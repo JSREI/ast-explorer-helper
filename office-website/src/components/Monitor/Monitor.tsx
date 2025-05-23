@@ -14,6 +14,15 @@ const Monitor: React.FC<MonitorProps> = ({
   const [isPowerOn, setIsPowerOn] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // 确保视频在组件挂载后开始播放
+  useEffect(() => {
+    if (videoRef.current && isPowerOn) {
+      videoRef.current.play().catch(error => {
+        console.log('视频自动播放失败:', error);
+      });
+    }
+  }, [isPowerOn]);
+
   // 切换电源状态
   const togglePower = () => {
     setIsPowerOn(!isPowerOn);
@@ -21,7 +30,9 @@ const Monitor: React.FC<MonitorProps> = ({
       if (isPowerOn) {
         videoRef.current.pause();
       } else {
-        videoRef.current.play();
+        videoRef.current.play().catch(error => {
+          console.log('视频播放失败:', error);
+        });
       }
     }
   };
