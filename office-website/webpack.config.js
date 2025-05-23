@@ -13,7 +13,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
     clean: true,
-    publicPath: baseUrl
+    publicPath: baseUrl,
+    assetModuleFilename: 'assets/[name][ext]'
   },
   module: {
     rules: [
@@ -67,7 +68,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/logo.png',
-      inject: true
+      inject: true,
+      publicPath: baseUrl
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -76,6 +78,9 @@ module.exports = {
           to: '',
           globOptions: {
             ignore: ['**/index.html']
+          },
+          info: {
+            minimized: true
           }
         }
       ]
