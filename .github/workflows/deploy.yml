@@ -50,4 +50,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: office-website/dist
           force_orphan: true # 确保使用干净的 gh-pages 分支
+          clean: true # 部署前清理目标目录
+          enable_jekyll: false # 禁用 Jekyll 构建
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: "deploy: 更新 GitHub Pages 站点" 
