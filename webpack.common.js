@@ -8,14 +8,19 @@ module.exports = {
         index: "./src/index.ts"  // 修改入口文件为 .ts
     },
     output: {
-        // filename: "[name]-[hash].js",
-        filename: "[name].js",
+        filename: "[name].user.js",
         path: path.resolve(__dirname, "dist"),
     },
     resolve: {
         extensions: [".ts", ".js"]  // 添加 .ts 扩展名
     },
-    optimization: {},
+    optimization: {
+        // 确保代码不会被压缩或混淆
+        concatenateModules: false,
+        // 禁用作用域提升以保持代码结构
+        providedExports: false,
+        usedExports: false,
+    },
     plugins: [
         // 在打包后的文件头插入一些banner信息，官方插件：
         // https://webpack.js.org/plugins/banner-plugin/
@@ -25,7 +30,6 @@ module.exports = {
             // 保持原样
             raw: true,
             banner: () => {
-                // 渲染文件头，目前只支持这些变量，有点丑，先凑活着用...
                 let userscriptHeaders = fs.readFileSync("./userscript-headers.js").toString("utf-8");
                 userscriptHeaders = userscriptHeaders.replaceAll("${name}", webpackPackageJson["name"] || "");
                 userscriptHeaders = userscriptHeaders.replaceAll("${namespace}", webpackPackageJson["namespace"] || "");
@@ -67,7 +71,16 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,  // 添加 TypeScript 文件的处理规则
-                use: 'ts-loader',
+                use: [{
+                    loader: 'ts-loader',
+                    options: {
+                        // 确保生成的代码保持可读性
+                        compilerOptions: {
+                            removeComments: false,
+                            pretty: true
+                        }
+                    }
+                }],
                 exclude: /node_modules/
             },
             {
