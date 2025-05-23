@@ -26,7 +26,7 @@
    - Firefox用户: 安装 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 
 2. 安装本用户脚本
-   - 点击 [这里](#) 安装脚本（链接待补充）
+   - 点击 [这里](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手) 安装脚本
    - 或手动将构建后的脚本复制到油猴插件中
 
 ## 💻 开发指南
