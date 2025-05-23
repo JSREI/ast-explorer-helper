@@ -21,7 +21,7 @@ export interface LoggerConfig {
 
 // 默认配置
 const DEFAULT_CONFIG: LoggerConfig = {
-    level: LogLevel.INFO,
+    level: LogLevel.DEBUG,
     prefix: '🧩 AST Explorer助手',
     showTime: true,
     enabled: true
@@ -39,13 +39,8 @@ function checkDebugMode(): boolean {
 
 // 配置初始日志级别
 function getInitialLogLevel(): LogLevel {
-    // 开发模式：在URL中添加ast_debug或debug参数
-    if (checkDebugMode()) {
-        return LogLevel.DEBUG;
-    }
-
-    // 生产环境：使用INFO级别
-    return LogLevel.INFO;
+    // 默认使用DEBUG级别
+    return LogLevel.DEBUG;
 }
 
 /**
@@ -60,14 +55,13 @@ export class Logger {
      */
     constructor(config?: Partial<LoggerConfig>) {
         this.config = { 
-            ...DEFAULT_CONFIG, 
-            level: getInitialLogLevel(),
+            ...DEFAULT_CONFIG,
             ...config 
         };
         
         // 输出初始状态日志
         if (this.config.level === LogLevel.DEBUG) {
-            this.debug('🔍 调试模式已启用');
+            console.debug('🔍 调试模式已启用 - 日志级别:', this.config.level);
         }
     }
 
@@ -143,7 +137,9 @@ export class Logger {
      * @param args 日志参数
      */
     debug(...args: any[]): void {
-        if (!this.config.enabled || this.config.level > LogLevel.DEBUG) return;
+        if (!this.config.enabled || this.config.level > LogLevel.DEBUG) {
+            return;
+        }
         const formattedArgs = this.formatMessage('DEBUG', args);
         console.debug('%c' + formattedArgs[0], 'color: #9e9e9e; font-weight: bold;', ...formattedArgs.slice(1));
     }
@@ -221,4 +217,6 @@ export class Logger {
 }
 
 // 创建默认日志实例
-export const logger = new Logger(); 
+export const logger = new Logger();
+
+logger.debug('热编译测试 - ' + new Date().toISOString()); 

@@ -1,58 +1,60 @@
-# AST Explorer 助手
+# AST Explorer 助手 🎯
 
-一个用于增强 [AST Explorer](https://astexplorer.net/) 网站体验的用户脚本工具。
+一个简单实用的浏览器插件，用于增强 [AST Explorer](https://astexplorer.net/) 网站的使用体验。
 
-## 功能特点
+## ✨ 主要功能
 
-- **可选择文本**：使AST节点名称可复制，方便在分析时引用节点名称
-- **自定义右键菜单**：提供节点操作的便捷菜单
-  - 复制内容：复制节点的纯文本内容
-  - 复制节点类型：复制节点的类型名称
-  - 复制路径：复制节点的完整路径
-  - 复制完整内容：复制包含子节点的所有内容
-- **元素高亮**：
-  - 鼠标悬停时浅色高亮
-  - 右键点击时明显高亮
-- **增大视图**：隐藏上方工具栏，提供更大的可视区域
+### 文本选择增强
+- 移除了AST Explorer默认的文本选择限制
+- 让节点内容可以自由复制，方便代码分析和文档编写
 
-## 开发技术
+### 便捷的右键菜单
+- 支持快速复制节点内容
+- 简单直观的操作方式
+- 保留了节点的原始格式
 
-- TypeScript
-- Webpack
-- 油猴脚本 (Tampermonkey/Greasemonkey)
+## 🛠️ 技术实现
 
-## 安装与使用
+- **TypeScript**: 提供类型安全的代码实现
+- **油猴脚本**: 实现浏览器端的功能注入
+- **模块化设计**: 清晰的代码结构，便于维护和扩展
 
-1. 在浏览器中安装 [Tampermonkey](https://www.tampermonkey.net/) 或 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
-2. 点击 [这里](#) 安装脚本
-3. 访问 [AST Explorer](https://astexplorer.net/) 网站，即可自动启用扩展功能
+## 📦 安装方法
 
-## 开发
+1. 首先安装油猴插件
+   - Chrome/Edge用户: 安装 [Tampermonkey](https://www.tampermonkey.net/)
+   - Firefox用户: 安装 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 
-### 安装依赖
+2. 安装本用户脚本
+   - 点击 [这里](#) 安装脚本（链接待补充）
+   - 或手动将构建后的脚本复制到油猴插件中
 
+## 💻 开发指南
+
+### 环境准备
 ```bash
+# 安装依赖
 npm install
 ```
 
 ### 开发模式
-
 ```bash
+# 启动开发服务器，支持热更新
 npm run watch
 ```
 
-### 构建生产版本
-
+### 构建发布版本
 ```bash
+# 生成生产环境代码
 npm run build
 ```
 
-## 许可证
+## 📝 开源协议
 
-MIT
+MIT License
 
-## 致谢
+## 🙏 致谢
 
-本项目基于 [TypeScript UserScript Template](https://github.com/JSREI/typescript-userscript-template) 构建，采用了该模板仓库的TypeScript和Webpack配置。该模板提供了模块化开发油猴脚本的最佳实践，使我们能够更高效地开发和维护这个项目。
+本项目基于 [TypeScript UserScript Template](https://github.com/JSREI/typescript-userscript-template) 开发，感谢该模板提供的基础开发框架。
 
 

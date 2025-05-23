@@ -584,6 +584,10 @@ export function getAboutTabStyles(): string {
             color: #0088cc;
         }
         
+        #ast-settings-modal .qr-section-title.qq {
+            color: #12B7F5;
+        }
+        
         #ast-settings-modal .qr-item {
             flex: 1;
             min-width: 200px;
@@ -594,6 +598,7 @@ export function getAboutTabStyles(): string {
             border-radius: 10px;
             transition: all 0.3s ease;
             border: 1px solid #f0f0f0;
+            text-align: center;
         }
         
         #ast-settings-modal .qr-item:hover {
@@ -607,16 +612,19 @@ export function getAboutTabStyles(): string {
             font-size: 14px;
             margin: 0 0 10px 0;
             color: #666;
+            text-align: center;
         }
         
         #ast-settings-modal .qr-code {
             margin: 10px auto;
-            display: inline-block;
+            display: block;
             padding: 8px;
             background-color: white;
             border: 1px solid #eee;
             border-radius: 8px;
             transition: all 0.3s ease;
+            text-align: center;
+            width: fit-content;
         }
         
         #ast-settings-modal .qr-item:hover .qr-code {
@@ -647,6 +655,21 @@ export function getAboutTabStyles(): string {
         
         #ast-settings-modal .tg-link:hover {
             color: #005580;
+            transform: translateX(2px);
+        }
+        
+        #ast-settings-modal .qq-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin: 5px 0;
+            font-weight: 500;
+            color: #12B7F5;
+            transition: all 0.2s;
+        }
+        
+        #ast-settings-modal .qq-link:hover {
+            color: #0091D7;
             transform: translateX(2px);
         }
     `;

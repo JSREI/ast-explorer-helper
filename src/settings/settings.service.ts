@@ -2,7 +2,6 @@
  * 设置管理服务
  */
 
-import { enableNodeSelection, disableNodeSelection } from '../ast-node/node-selection.service';
 import { logger } from '../logger';
 
 // 定义设置项及其默认值
@@ -185,9 +184,7 @@ export function applyToolbarSetting(hide: boolean): void {
  * 启用节点选择功能 (现在始终启用)
  */
 export function applyNodeSelectionSetting(): void {
-    logger.debug('启用节点选择功能 (默认始终启用)');
-    enableNodeSelection();
-    logger.debug('节点选择功能已启用');
+    logger.debug('节点选择功能已内置，无需额外启用');
 }
 
 /**

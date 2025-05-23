@@ -1,5 +1,4 @@
 /**
- * DOM 辅助函数模块入口
+ * DOM 操作相关的工具函数
  */
-
 export * from './dom-utils'; 
