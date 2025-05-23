@@ -44,24 +44,10 @@ jobs:
           # 设置 BASE_URL 环境变量，确保资源路径正确
           BASE_URL: /ast-explorer-helper/
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: office-website/dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    
-    # 指定环境为 github-pages
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true # 确保使用干净的 gh-pages 分支
+          commit_message: "deploy: 更新 GitHub Pages 站点" 
