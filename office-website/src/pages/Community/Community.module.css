@@ -1,0 +1,62 @@
+/* 社区页面样式 */
+.communityPage {
+  padding: 2rem 0;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.communityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.communityItem {
+  text-align: center;
+}
+
+.communityItem h2 {
+  margin-bottom: 1rem;
+}
+
+.qrcode {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.qrcode img {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.qrcode img:hover {
+  transform: scale(1.05);
+}
+
+.note {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .communityGrid {
+    grid-template-columns: 1fr;
+    padding: 0 var(--spacing-sm);
+  }
+} 

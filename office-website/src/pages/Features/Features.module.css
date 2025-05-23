@@ -1,0 +1,53 @@
+/* 功能页面样式 */
+.featureDetail {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.featureDetail:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.featureDetail h2 {
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  font-size: var(--font-size-2xl);
+}
+
+.featureContent {
+  margin-left: 2rem;
+}
+
+.featureDescription h3 {
+  margin: 1.5rem 0 1rem;
+  color: var(--text-color);
+  font-size: var(--font-size-xl);
+}
+
+.featureDescription ul,
+.featureDescription ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.featureDescription li {
+  margin-bottom: 0.5rem;
+}
+
+.featureImage {
+  margin: 2rem 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.featureImage:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+} 

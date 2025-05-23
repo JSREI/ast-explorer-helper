@@ -1,0 +1,136 @@
+/* Header 样式 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2563eb;
+  text-decoration: none;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.logo:hover {
+  color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+.navLink {
+  color: #000000;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  position: relative;
+  font-weight: 600;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
+  transition: all 0.2s ease;
+  transform: translateX(-50%);
+}
+
+.navLink:hover {
+  color: #2563eb;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: #2563eb;
+}
+
+.navLink.active::after {
+  width: 100%;
+}
+
+.githubBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 2rem;
+  padding: 0.5rem 1rem;
+  color: #000000;
+  text-decoration: none;
+  font-size: 0.875rem;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  font-weight: 500;
+}
+
+.githubBadge:hover {
+  background: rgba(37, 99, 235, 0.15);
+  transform: translateY(-1px);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.githubIcon,
+.starIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+}
+
+.starCount {
+  font-weight: 500;
+  color: #2563eb;
+} 

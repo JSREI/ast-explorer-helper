@@ -1,0 +1,29 @@
+/* Footer 样式 */
+.footer {
+  padding: 2rem;
+  background-color: var(--background-color);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.copyright {
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--primary-color);
+} 

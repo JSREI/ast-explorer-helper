@@ -1,0 +1,254 @@
+/* 显示器样式 */
+.monitorWrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  perspective: 1200px;
+  transform: scale(1.2);
+  transform-origin: center top;
+}
+
+.simpleMonitor {
+  position: relative;
+  transform: perspective(1000px) rotateY(-3deg);
+  transition: all 0.4s ease;
+  margin-bottom: 40px;
+  width: auto;
+  height: auto;
+}
+
+.simpleMonitor:hover {
+  transform: perspective(1000px) rotateY(0);
+}
+
+/* 显示器框架 */
+.monitorFrame {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    inset 0 2px 5px rgba(255, 255, 255, 0.1);
+  border: 8px solid #2a2a2a;
+  border-bottom-width: 20px;
+  position: relative;
+  padding: 0;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 屏幕 */
+.monitorScreen {
+  background-color: #000;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: background-color 0.3s ease;
+  flex: 1;
+  display: flex;
+}
+
+/* 屏幕电源状态 */
+.monitorScreen.powerOn {
+  background-color: #fff;
+}
+
+.monitorScreen.powerOff {
+  background-color: #f0f0f0;
+}
+
+/* 关闭状态下的黑屏占位元素 */
+.powerOffOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  z-index: 10;
+}
+
+/* 添加反光效果 */
+.powerOffOverlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 11;
+}
+
+.demoVideo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+
+/* 隐藏但不影响布局的元素 */
+.demoVideo.invisible {
+  opacity: 0;
+}
+
+/* 底部控制区域 */
+.monitorControls {
+  position: relative;
+  width: 100%;
+  height: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* 底座 */
+.monitorStand {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.standNeck {
+  width: 40px;
+  height: 40px;
+  background-color: #2a2a2a;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 3px;
+}
+
+.standBase {
+  width: 160px;
+  height: 20px;
+  background-color: #1a1a1a;
+  border-radius: 40% / 100%;
+  margin-top: -2px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 铭牌标识 */
+.brandBadge {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 14px;
+  color: #d4af37;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+
+/* 铭牌链接样式 */
+.brandLink {
+  color: #d4af37 !important;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+/* 所有链接状态下保持颜色 */
+.brandLink:visited, .brandLink:active, .brandLink:link {
+  color: #d4af37 !important;
+  text-decoration: none;
+}
+
+/* 只在悬停时增加亮度 */
+.brandLink:hover {
+  color: #f4c542 !important;
+  text-decoration: none;
+  filter: brightness(1.2);
+}
+
+/* 电源按钮 */
+.powerButton {
+  position: absolute;
+  right: 15px;
+  bottom: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  outline: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 2px rgba(255, 255, 255, 0.8);
+  z-index: 100;
+}
+
+.powerButton:hover {
+  transform: scale(1.15);
+}
+
+.powerButton:active {
+  transform: scale(0.95);
+}
+
+/* 电源指示灯 */
+.powerIndicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 开启状态 */
+.powerButton.on .powerIndicator {
+  background-color: #4CAF50;
+  box-shadow: 0 0 5px #4CAF50, 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+/* 关闭状态 */
+.powerButton.off .powerIndicator {
+  background-color: #ccc;
+  box-shadow: none;
+}
+
+@media (max-width: 992px) {
+  .monitorWrapper {
+    transform: scale(1.2);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .simpleMonitor {
+    transform: perspective(1000px) rotateY(0);
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .monitorWrapper {
+    transform: scale(1);
+  }
+} 
