@@ -4,13 +4,11 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'office-website/**'
   workflow_dispatch:
 
 # 设置 GITHUB_TOKEN 的权限
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
