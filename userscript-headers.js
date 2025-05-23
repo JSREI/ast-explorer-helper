@@ -6,4 +6,7 @@
 // @author       ${author}
 // @match        https://astexplorer.net/
 // @grant        none
+// @license      MIT
+// @supportURL   ${repository}/issues
+// @homepageURL  ${repository}
 // ==/UserScript== 
