@@ -34,7 +34,7 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div className={styles.heroRight}>
-            <Monitor videoUrl="/videos/demo.mov" />
+            <Monitor videoUrl="videos/demo.mov" />
           </div>
         </div>
       </section>

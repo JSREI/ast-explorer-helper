@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }): JSX.Element => {
       <div className={`container ${styles.container}`}>
         <nav className={styles.nav}>
           <a href="#home" className={styles.logo}>
-            <img src="/logo.png" alt="AST Explorer Helper" />
+            <img src="logo.png" alt="AST Explorer Helper" />
             {t('title')}
           </a>
           <div className={styles.navLinks}>
