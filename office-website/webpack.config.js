@@ -71,15 +71,20 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
+        // 复制logo
         { 
-          from: 'public',
-          to: '',
-          globOptions: {
-            ignore: ['**/index.html']
-          },
-          info: {
-            minimized: true
-          }
+          from: 'public/logo.png',
+          to: 'logo.png'
+        },
+        // 复制视频
+        {
+          from: 'public/videos',
+          to: 'videos'
+        },
+        // 复制多语言文件
+        {
+          from: 'public/locales',
+          to: 'locales'
         }
       ]
     })
