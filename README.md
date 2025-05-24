@@ -2,6 +2,8 @@
 
 一个简单实用的浏览器插件，用于增强 [AST Explorer](https://astexplorer.net/) 网站的使用体验。
 
+🌐 [官方网站](https://jsrei.github.io/ast-explorer-helper/) | [Greasy Fork](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手) | [GitHub](https://github.com/CC11001100/ast-explorer-helper)
+
 ## ✨ 主要功能
 
 ### 文本选择增强
