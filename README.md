@@ -1,19 +1,36 @@
 # AST Explorer 助手 🎯
 
+[English](./README_EN.md) | 简体中文
+
 一个简单实用的浏览器插件，用于增强 [AST Explorer](https://astexplorer.net/) 网站的使用体验。
 
-🌐 [官方网站](https://jsrei.github.io/ast-explorer-helper/) | [Greasy Fork](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手) | [GitHub](https://github.com/CC11001100/ast-explorer-helper)
+[![GitHub stars](https://img.shields.io/github/stars/JSREI/ast-explorer-helper?style=flat-square)](https://github.com/JSREI/ast-explorer-helper/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/JSREI/ast-explorer-helper?style=flat-square)](https://github.com/JSREI/ast-explorer-helper/network)
+[![GitHub license](https://img.shields.io/github/license/JSREI/ast-explorer-helper?style=flat-square)](https://github.com/JSREI/ast-explorer-helper/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/JSREI/ast-explorer-helper?style=flat-square)](https://github.com/JSREI/ast-explorer-helper/issues)
+[![Greasy Fork](https://img.shields.io/badge/Greasy%20Fork-安装脚本-brightgreen?style=flat-square)](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手)
+[![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![油猴](https://img.shields.io/badge/油猴-Tampermonkey-orange?style=flat-square)](https://www.tampermonkey.net/)
+
+🌐 [官方网站](https://jsrei.github.io/ast-explorer-helper/) | [Greasy Fork](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手) | [GitHub](https://github.com/JSREI/ast-explorer-helper)
 
 ## ✨ 主要功能
 
-### 文本选择增强
-- 移除了AST Explorer默认的文本选择限制
-- 让节点内容可以自由复制，方便代码分析和文档编写
+### 隐藏工具栏
 
-### 便捷的右键菜单
-- 支持快速复制节点内容
-- 简单直观的操作方式
-- 保留了节点的原始格式
+能够隐藏工具栏，增加用户视图空间，提供更舒适的代码分析体验。
+
+<p align="center">
+  <img src="./.README_images/hide-tools-demo.gif" alt="隐藏工具栏演示" width="80%">
+</p>
+
+### 右键复制
+
+支持通过右键菜单快速复制节点内容，操作简单直观，保留原始格式。
+
+<p align="center">
+  <img src="./.README_images/copy-demo.gif" alt="右键复制演示" width="80%">
+</p>
 
 ## 🛠️ 技术实现
 
@@ -23,13 +40,33 @@
 
 ## 📦 安装方法
 
+### 方式一：从油猴商店安装（推荐）
+
 1. 首先安装油猴插件
    - Chrome/Edge用户: 安装 [Tampermonkey](https://www.tampermonkey.net/)
    - Firefox用户: 安装 [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 
 2. 安装本用户脚本
    - 点击 [这里](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手) 安装脚本
-   - 或手动将构建后的脚本复制到油猴插件中
+
+### 方式二：自行编译安装
+
+1. 克隆仓库
+```bash
+git clone https://github.com/JSREI/ast-explorer-helper.git
+```
+
+2. 安装依赖
+```bash
+npm install
+```
+
+3. 构建项目
+```bash
+npm run build
+```
+
+4. 在dist目录找到`ast-explorer-helper.user.js`文件，将其拖拽到油猴插件管理页面中安装
 
 ## 💻 开发指南
 
@@ -59,6 +96,7 @@ MIT License
 
 本项目基于 [TypeScript UserScript Template](https://github.com/JSREI/typescript-userscript-template) 开发，感谢该模板提供的基础开发框架。
 
+
 ## 💬 逆向技术交流群
 
 ### 微信
@@ -84,3 +122,7 @@ MIT License
 <img src="https://cdn.jsdelivr.net/gh/JSREI/.github/profile/README.assets/image-20241016231143315.png" style="width: 200px">
 
 
+
+## 📈 Star 历史
+
+[![Star History Chart](https://api.star-history.com/svg?repos=JSREI/ast-explorer-helper&type=Date)](https://star-history.com/#JSREI/ast-explorer-helper&Date)

@@ -14,13 +14,13 @@
   },
   "features": {
     "title": "Key Features",
-    "textSelection": {
-      "title": "Enhanced Text Selection",
-      "description": "Remove default selection restrictions, allowing free copying of node content for easier code analysis and documentation"
+    "hideToolbar": {
+      "title": "Hide Toolbar",
+      "description": "Ability to hide the toolbar, increasing view space for a more comfortable code analysis experience"
     },
-    "contextMenu": {
-      "title": "Convenient Right-Click Menu",
-      "description": "Support quick copying of node content with simple and intuitive operations while preserving original formatting"
+    "rightClickCopy": {
+      "title": "Right-Click Copy",
+      "description": "Support quick copying of node content with right-click menu while preserving original formatting"
     }
   },
   "whyUse": {
@@ -109,20 +109,20 @@
   },
   "featuresPage": {
     "title": "Feature Details",
-    "textSelection": {
-      "title": "🔍 Text Selection Enhancement",
-      "subtitle": "Free Text Selection",
-      "description": "Remove AST Explorer's default text selection restrictions, allowing you to freely select and copy any node content.",
+    "hideToolbar": {
+      "title": "🔍 Hide Toolbar",
+      "subtitle": "Increase View Space",
+      "description": "Hide AST Explorer's toolbar to have more viewing space for code analysis.",
       "useCases": "Use Cases",
       "useCasesItems": [
-        "Copy node names for documentation",
-        "Extract node content for analysis",
-        "Share specific AST structures with colleagues"
+        "Get more workspace on small screen devices",
+        "Focus on AST structure analysis",
+        "Provide clearer code view"
       ]
     },
-    "contextMenu": {
-      "title": "📋 Convenient Context Menu",
-      "subtitle": "Quick Copy",
+    "rightClickCopy": {
+      "title": "📋 Right-Click Copy",
+      "subtitle": "Quick Content Copy",
       "description": "Quickly copy node content via right-click menu, preserving original format without manual selection.",
       "usageTitle": "How to Use",
       "usageSteps": [

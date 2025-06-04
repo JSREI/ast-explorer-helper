@@ -14,13 +14,13 @@
   },
   "features": {
     "title": "主要功能",
-    "textSelection": {
-      "title": "文本选择增强",
-      "description": "移除默认的选择限制，让节点内容可以自由复制，方便代码分析和文档编写"
+    "hideToolbar": {
+      "title": "隐藏工具栏",
+      "description": "能够隐藏工具栏，增加用户视图空间，提供更舒适的代码分析体验"
     },
-    "contextMenu": {
-      "title": "便捷的右键菜单",
-      "description": "支持快速复制节点内容，操作简单直观，保留原始格式"
+    "rightClickCopy": {
+      "title": "右键复制",
+      "description": "支持通过右键菜单快速复制节点内容，操作简单直观，保留原始格式"
     }
   },
   "whyUse": {
@@ -117,20 +117,20 @@
   },
   "featuresPage": {
     "title": "功能详情",
-    "textSelection": {
-      "title": "🔍 文本选择增强",
-      "subtitle": "自由选择文本",
-      "description": "移除AST Explorer默认的文本选择限制，让你可以自由地选择和复制任何节点内容。",
+    "hideToolbar": {
+      "title": "🔍 隐藏工具栏",
+      "subtitle": "增加视图空间",
+      "description": "可以隐藏AST Explorer的工具栏，让你拥有更多的视图空间进行代码分析。",
       "useCases": "使用场景",
       "useCasesItems": [
-        "复制节点名称用于文档编写",
-        "提取节点内容进行分析",
-        "分享特定AST结构给同事"
+        "在小屏幕设备上获得更多工作区域",
+        "专注于AST结构分析",
+        "提供更清晰的代码视图"
       ]
     },
-    "contextMenu": {
-      "title": "📋 便捷的右键菜单",
-      "subtitle": "快速复制",
+    "rightClickCopy": {
+      "title": "📋 右键复制",
+      "subtitle": "快速复制内容",
       "description": "通过右键菜单快速复制节点内容，保留原始格式，无需手动选择。",
       "usageTitle": "使用方式",
       "usageSteps": [
