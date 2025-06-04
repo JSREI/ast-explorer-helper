@@ -73,12 +73,11 @@
   },
   "contributors": {
     "title": "贡献者与感谢",
-    "description": "感谢以下用户报告问题与建议改进，帮助我们不断完善产品：",
+    "description": "感谢以下用户帮助我们不断完善产品：",
     "list": [
       {
         "name": "mazp99",
-        "profile": "https://github.com/mazp99",
-        "contribution": "提出代码块复制功能建议"
+        "profile": "https://github.com/mazp99"
       }
     ]
   },

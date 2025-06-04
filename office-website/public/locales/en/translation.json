@@ -73,12 +73,11 @@
   },
   "contributors": {
     "title": "Contributors & Thanks",
-    "description": "Thanks to the following users for reporting issues and suggesting improvements, helping us to continuously enhance our product:",
+    "description": "Thanks to the following users for helping improve our product:",
     "list": [
       {
         "name": "mazp99",
-        "profile": "https://github.com/mazp99",
-        "contribution": "Suggested the code block copy feature"
+        "profile": "https://github.com/mazp99"
       }
     ]
   },
