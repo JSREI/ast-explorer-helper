@@ -94,6 +94,16 @@ const zhTranslation = {
       description: "完全开源，社区驱动，持续改进"
     }
   },
+  contributors: {
+    title: "贡献者与感谢",
+    description: "感谢以下用户帮助我们不断完善产品：",
+    list: [
+      {
+        name: "mazp99",
+        profile: "https://github.com/mazp99"
+      }
+    ]
+  },
   install: {
     title: "安装指南",
     step1: {
@@ -249,6 +259,16 @@ const enTranslation = {
       title: "Right-Click Copy",
       description: "Support quick copying of node content with right-click menu while preserving original formatting"
     }
+  },
+  contributors: {
+    title: "Contributors & Thanks",
+    description: "Thanks to the following users for reporting issues and suggesting improvements, helping us to continuously enhance our product:",
+    list: [
+      {
+        name: "mazp99",
+        profile: "https://github.com/mazp99"
+      }
+    ]
   },
   whyUse: {
     title: "Why Use AST Explorer Helper?",

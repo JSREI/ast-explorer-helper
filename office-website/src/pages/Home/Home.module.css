@@ -752,31 +752,52 @@
   text-align: center;
   border: 1px solid var(--border-color);
   transition: all 0.3s ease;
-  width: 280px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
 }
 
 .contributorItem:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
   border-color: var(--primary);
+  background-color: var(--bg-lighter);
+}
+
+.contributorAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.contributorAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contributorItem:hover .contributorAvatar {
+  border-color: var(--primary);
+  transform: scale(1.05);
 }
 
 .contributorItem h3 {
-  color: var(--text-primary);
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: var(--space-3);
-}
-
-.contributorItem h3 a {
   color: var(--primary);
-  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
   transition: color 0.2s ease;
 }
 
-.contributorItem h3 a:hover {
+.contributorItem:hover h3 {
   color: var(--primary-dark);
-  text-decoration: underline;
 }
 
 .contributorItem p {

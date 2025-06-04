@@ -195,16 +195,46 @@ const Home: React.FC = () => {
           <h2 className="text-center">{t('contributors.title')}</h2>
           <p className="text-center">{t('contributors.description')}</p>
           <div className={styles.contributorsGrid}>
-            {(t('contributors.list', { returnObjects: true }) as Array<{name: string; profile: string; contribution: string}>).map((contributor, index) => (
-              <div className={styles.contributorItem} key={index}>
-                <h3>
-                  <a href={contributor.profile} target="_blank" rel="noopener noreferrer">
-                    {contributor.name}
+            {(() => {
+              const contributorsList = t('contributors.list', { returnObjects: true });
+              // 检查是否为数组且至少有一个元素
+              if (Array.isArray(contributorsList) && contributorsList.length > 0) {
+                return contributorsList.map((contributor, index) => (
+                  <a 
+                    href={contributor.profile} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={styles.contributorItem} 
+                    key={index}
+                  >
+                    <div className={styles.contributorAvatar}>
+                      <img 
+                        src={`https://github.com/${contributor.name}.png`} 
+                        alt={`${contributor.name}'s avatar`} 
+                      />
+                    </div>
+                    <h3>{contributor.name}</h3>
                   </a>
-                </h3>
-                <p>{contributor.contribution}</p>
-              </div>
-            ))}
+                ));
+              }
+              // 默认显示一个固定的贡献者项（备用方案）
+              return (
+                <a 
+                  href="https://github.com/mazp99" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.contributorItem}
+                >
+                  <div className={styles.contributorAvatar}>
+                    <img 
+                      src="https://github.com/mazp99.png" 
+                      alt="mazp99's avatar" 
+                    />
+                  </div>
+                  <h3>mazp99</h3>
+                </a>
+              );
+            })()}
           </div>
         </div>
       </section>
