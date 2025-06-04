@@ -724,4 +724,74 @@
     padding: 10px 12px;
     font-size: 13px;
   }
+}
+
+/* 贡献者部分 */
+.contributors {
+  padding: var(--section-spacing) 0;
+  background: var(--bg-white);
+  position: relative;
+}
+
+.contributorsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--space-4);
+}
+
+.contributorItem {
+  background-color: var(--bg-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  width: 280px;
+}
+
+.contributorItem:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary);
+}
+
+.contributorItem h3 {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.contributorItem h3 a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contributorItem h3 a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.contributorItem p {
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .contributorsGrid {
+    gap: var(--space-4);
+  }
+  
+  .contributorItem {
+    width: 100%;
+    max-width: 400px;
+  }
 } 

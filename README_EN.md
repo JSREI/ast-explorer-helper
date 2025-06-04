@@ -96,6 +96,12 @@ MIT License
 
 This project is based on [TypeScript UserScript Template](https://github.com/JSREI/typescript-userscript-template), thanks to the template for providing the basic development framework.
 
+## 👨‍💻 Contributors
+
+Thanks to the following users for reporting issues and suggesting improvements, helping us to continuously enhance the product:
+
+- [@mazp99](https://github.com/mazp99) - Suggested the code block copy feature
+
 ## 💬 Reverse Engineering Community
 
 ### WeChat

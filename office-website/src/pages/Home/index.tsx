@@ -190,6 +190,25 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      <section className={styles.contributors} id="contributors">
+        <div className="container">
+          <h2 className="text-center">{t('contributors.title')}</h2>
+          <p className="text-center">{t('contributors.description')}</p>
+          <div className={styles.contributorsGrid}>
+            {(t('contributors.list', { returnObjects: true }) as Array<{name: string; profile: string; contribution: string}>).map((contributor, index) => (
+              <div className={styles.contributorItem} key={index}>
+                <h3>
+                  <a href={contributor.profile} target="_blank" rel="noopener noreferrer">
+                    {contributor.name}
+                  </a>
+                </h3>
+                <p>{contributor.contribution}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className={styles.community} id="community">
         <div className="container">
           <h2 className="text-center">{t('community.title')}</h2>

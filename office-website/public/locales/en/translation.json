@@ -71,6 +71,17 @@
       "viewSource": "View Source Code"
     }
   },
+  "contributors": {
+    "title": "Contributors & Thanks",
+    "description": "Thanks to the following users for reporting issues and suggesting improvements, helping us to continuously enhance our product:",
+    "list": [
+      {
+        "name": "mazp99",
+        "profile": "https://github.com/mazp99",
+        "contribution": "Suggested the code block copy feature"
+      }
+    ]
+  },
   "community": {
     "title": "Reverse Engineering Community",
     "subtitle": "Join Our Community",

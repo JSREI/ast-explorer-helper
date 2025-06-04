@@ -96,6 +96,11 @@ MIT License
 
 本项目基于 [TypeScript UserScript Template](https://github.com/JSREI/typescript-userscript-template) 开发，感谢该模板提供的基础开发框架。
 
+## 👨‍💻 贡献者
+
+感谢以下用户报告问题与提出建议，帮助我们不断完善产品：
+
+- [@mazp99](https://github.com/mazp99) - 提出代码块复制功能建议
 
 ## 💬 逆向技术交流群
 
