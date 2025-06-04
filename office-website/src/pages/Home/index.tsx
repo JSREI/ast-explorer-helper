@@ -42,44 +42,45 @@ const Home: React.FC = () => {
       <section className={styles.features} id="features">
         <div className="container">
           <h2 className="text-center">{t('features.title')}</h2>
-          <div className={styles.featureGrid}>
+          <div className={styles.featureColumn}>
             <div className={styles.featureItem}>
-              <div className={styles.featureIcon}>🔍</div>
-              <h3 className={styles.featureTitle}>
-                {t('features.textSelection.title')}
-              </h3>
+              <div className={styles.featureHeader}>
+                <div className={styles.featureIcon}>🔍</div>
+                <h3 className={styles.featureTitle}>
+                  {t('features.hideToolbar.title')}
+                </h3>
+              </div>
               <p className={styles.featureDescription}>
-                {t('features.textSelection.description')}
+                {t('features.hideToolbar.description')}
               </p>
+              <div className={styles.featureDemoWrapper}>
+                <img 
+                  src="gif/hide-tools-demo.gif" 
+                  alt="隐藏工具栏演示" 
+                  className={styles.featureDemo}
+                  onClick={() => setOpenImage("/gif/hide-tools-demo.gif")}
+                />
+              </div>
             </div>
-            <div className={styles.featureItem}>
-              <div className={styles.featureIcon}>📋</div>
-              <h3 className={styles.featureTitle}>
-                {t('features.contextMenu.title')}
-              </h3>
-              <p className={styles.featureDescription}>
-                {t('features.contextMenu.description')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className={styles.whyUse}>
-        <div className="container">
-          <h2 className="text-center">{t('whyUse.title')}</h2>
-          <div className={styles.reasons}>
-            <div className={styles.reason}>
-              <h3>🚀 {t('whyUse.efficiency.title')}</h3>
-              <p>{t('whyUse.efficiency.description')}</p>
-            </div>
-            <div className={styles.reason}>
-              <h3>💡 {t('whyUse.easyToUse.title')}</h3>
-              <p>{t('whyUse.easyToUse.description')}</p>
-            </div>
-            <div className={styles.reason}>
-              <h3>🛠️ {t('whyUse.openSource.title')}</h3>
-              <p>{t('whyUse.openSource.description')}</p>
+            <div className={styles.featureItem}>
+              <div className={styles.featureHeader}>
+                <div className={styles.featureIcon}>📋</div>
+                <h3 className={styles.featureTitle}>
+                  {t('features.rightClickCopy.title')}
+                </h3>
+              </div>
+              <p className={styles.featureDescription}>
+                {t('features.rightClickCopy.description')}
+              </p>
+              <div className={styles.featureDemoWrapper}>
+                <img 
+                  src="gif/copy-demo.gif" 
+                  alt="右键复制演示" 
+                  className={styles.featureDemo}
+                  onClick={() => setOpenImage("/gif/copy-demo.gif")}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -127,24 +128,51 @@ const Home: React.FC = () => {
                 {t('install.step2.title')}
               </h3>
               <p>{t('install.step2.description')}</p>
-              <div className="text-center">
-                <a
-                  href="https://greasyfork.org/zh-CN/scripts/419783-ast-explorer%E5%8A%A9%E6%89%8B"
-                  className="btn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('install.step2.installScript')}
-                </a>
+              
+              <div className={styles.installMethods}>
+                {/* 方式一: 从油猴商店安装 */}
+                <div className={styles.installMethod}>
+                  <h4 className={styles.methodTitle}>{t('install.step2.method1.title')}</h4>
+                  <p>{t('install.step2.method1.description')}</p>
+                  <div className="text-center">
+                    <a
+                      href="https://greasyfork.org/zh-CN/scripts/419783-ast-explorer%E5%8A%A9%E6%89%8B"
+                      className="btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t('install.step2.method1.installScript')}
+                    </a>
+                  </div>
+                  <div className={styles.methodSteps}>
+                    <ol>
+                      {(t('install.step2.method1.steps', { returnObjects: true }) as string[]).map((step: string, index: number) => (
+                        <li key={index}>{step}</li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
+                
+                {/* 方式二: 自行编译 */}
+                <div className={styles.installMethod}>
+                  <h4 className={styles.methodTitle}>{t('install.step2.method2.title')}</h4>
+                  <p>{t('install.step2.method2.description')}</p>
+                  <div className={styles.methodSteps}>
+                    <ol>
+                      {(t('install.step2.method2.steps', { returnObjects: true }) as Array<{ text: string; code?: string }>).map((step, index) => (
+                        <li key={index}>
+                          <span>{step.text}</span>
+                          {step.code && (
+                            <pre className={styles.codeBlock}>
+                              <code>{step.code}</code>
+                            </pre>
+                          )}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
               </div>
-              <p className="note">
-                {t('install.step2.note')}
-              </p>
-              <ol>
-                <li>{t('install.step2.visitRepo')} <a href="https://github.com/JSREI/ast-explorer-helper" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                <li>{t('install.step2.downloadFile')}</li>
-                <li>{t('install.step2.dragAndDrop')}</li>
-              </ol>
             </div>
 
             <div className={styles.step}>

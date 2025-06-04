@@ -70,13 +70,13 @@ const zhTranslation = {
   },
   features: {
     title: "主要功能",
-    textSelection: {
-      title: "增强文本选择",
-      description: "移除默认的选择限制，让你可以自由复制节点内容，更方便代码分析和文档编写"
+    hideToolbar: {
+      title: "隐藏工具栏",
+      description: "能够隐藏工具栏，增加用户视图空间，提供更舒适的代码分析体验"
     },
-    contextMenu: {
-      title: "便捷右键菜单",
-      description: "支持通过右键菜单快速复制节点内容，操作简单直观，保持原始格式"
+    rightClickCopy: {
+      title: "右键复制",
+      description: "支持通过右键菜单快速复制节点内容，操作简单直观，保留原始格式"
     }
   },
   whyUse: {
@@ -106,19 +106,51 @@ const zhTranslation = {
     },
     step2: {
       title: "安装用户脚本",
-      description: "安装完油猴插件后，点击下面的按钮安装AST Explorer助手：",
-      installScript: "安装脚本",
-      note: "注：如果按钮无法正常工作，你也可以：",
-      visitRepo: "访问我们的 GitHub仓库",
-      downloadFile: "下载 dist/ast-explorer-helper.user.js 文件",
-      dragAndDrop: "手动将文件拖拽到油猴插件页面中安装"
+      description: "安装完油猴插件后，你可以通过以下两种方式安装AST Explorer助手：",
+      method1: {
+        title: "方式一：从油猴商店安装（推荐）",
+        description: "这是最简单的方法，直接从Greasy Fork安装：",
+        installScript: "安装脚本",
+        steps: [
+          "点击上方的'安装脚本'按钮",
+          "在弹出的油猴页面中，点击'安装'或'确认安装'",
+          "安装完成后，无需额外配置即可使用"
+        ]
+      },
+      method2: {
+        title: "方式二：自行编译安装",
+        description: "如果你想自己编译最新版本，请按照以下步骤操作：",
+        steps: [
+          {
+            text: "克隆仓库：",
+            code: "git clone https://github.com/JSREI/ast-explorer-helper.git"
+          },
+          {
+            text: "安装依赖：",
+            code: "npm install"
+          },
+          {
+            text: "构建项目：",
+            code: "npm run build"
+          },
+          {
+            text: "编译完成后，在dist目录找到ast-explorer-helper.user.js文件"
+          },
+          {
+            text: "将此文件拖拽到油猴插件管理页面中安装"
+          },
+          {
+            text: "或者在油猴管理面板中选择'添加新脚本'，然后复制粘贴文件内容"
+          }
+        ]
+      }
     },
     step3: {
       title: "开始使用",
       description: "安装完成后：",
       visitSite: "访问 AST Explorer",
       autoEnable: "脚本会自动启用",
-      enjoyFeature: "现在你可以自由地选择和复制AST节点内容了！"
+      enjoyFeature: "现在你可以使用工具栏隐藏和右键复制功能了！"
     }
   },
   community: {
@@ -152,6 +184,40 @@ const zhTranslation = {
   footer: {
     projectHome: "项目主页",
     copyright: "© {year} AST Explorer 助手。保留所有权利。"
+  },
+  featuresPage: {
+    title: "功能详情",
+    hideToolbar: {
+      title: "🔍 隐藏工具栏",
+      subtitle: "增加视图空间",
+      description: "可以隐藏AST Explorer的工具栏，让你拥有更多的视图空间进行代码分析。",
+      useCases: "使用场景",
+      useCasesItems: [
+        "在小屏幕设备上获得更多工作区域",
+        "专注于AST结构分析",
+        "提供更清晰的代码视图"
+      ]
+    },
+    rightClickCopy: {
+      title: "📋 右键复制",
+      subtitle: "快速复制内容",
+      description: "通过右键菜单快速复制节点内容，保留原始格式，无需手动选择。",
+      usageTitle: "使用方式",
+      usageSteps: [
+        "在任意AST节点上右键点击",
+        "选择\"复制\"选项",
+        "节点内容已复制到剪贴板"
+      ]
+    },
+    comingSoon: {
+      title: "🔮 即将推出",
+      description: "我们正在开发更多实用功能，敬请期待：",
+      features: [
+        "节点路径复制",
+        "节点类型快速复制",
+        "更多自定义选项"
+      ]
+    }
   }
 };
 
@@ -175,13 +241,13 @@ const enTranslation = {
   },
   features: {
     title: "Key Features",
-    textSelection: {
-      title: "Enhanced Text Selection",
-      description: "Remove default selection restrictions, allowing free copying of node content for easier code analysis and documentation"
+    hideToolbar: {
+      title: "Hide Toolbar",
+      description: "Ability to hide the toolbar, increasing view space for a more comfortable code analysis experience"
     },
-    contextMenu: {
-      title: "Convenient Right-Click Menu",
-      description: "Support quick copying of node content with simple and intuitive operations while preserving original formatting"
+    rightClickCopy: {
+      title: "Right-Click Copy",
+      description: "Support quick copying of node content with right-click menu while preserving original formatting"
     }
   },
   whyUse: {
@@ -211,19 +277,51 @@ const enTranslation = {
     },
     step2: {
       title: "Install User Script",
-      description: "After installing the userscript manager, click the button below to install AST Explorer Helper:",
-      installScript: "Install Script",
-      note: "Note: If the button doesn't work, you can also:",
-      visitRepo: "Visit our GitHub repository",
-      downloadFile: "Download dist/ast-explorer-helper.user.js file",
-      dragAndDrop: "Manually drag and drop the file into your userscript manager"
+      description: "After installing the userscript manager, you can install AST Explorer Helper using one of these two methods:",
+      method1: {
+        title: "Method 1: Install from Userscript Store (Recommended)",
+        description: "This is the simplest method, directly install from Greasy Fork:",
+        installScript: "Install Script",
+        steps: [
+          "Click the 'Install Script' button above",
+          "In the Tampermonkey popup page, click 'Install' or 'Confirm Installation'",
+          "Once installed, no additional configuration is needed"
+        ]
+      },
+      method2: {
+        title: "Method 2: Compile and Install Yourself",
+        description: "If you want to compile the latest version yourself, follow these steps:",
+        steps: [
+          {
+            text: "Clone the repository:",
+            code: "git clone https://github.com/JSREI/ast-explorer-helper.git"
+          },
+          {
+            text: "Install dependencies:",
+            code: "npm install"
+          },
+          {
+            text: "Build the project:",
+            code: "npm run build"
+          },
+          {
+            text: "After compilation, find the ast-explorer-helper.user.js file in the dist directory"
+          },
+          {
+            text: "Drag and drop this file into your userscript manager page to install"
+          },
+          {
+            text: "Or select 'Add New Script' in the userscript manager and copy-paste the file content"
+          }
+        ]
+      }
     },
     step3: {
       title: "Start Using",
       description: "After installation:",
       visitSite: "Visit AST Explorer",
       autoEnable: "The script will automatically enable",
-      enjoyFeature: "Now you can freely select and copy AST node content!"
+      enjoyFeature: "Now you can use the toolbar hiding and right-click copy features!"
     }
   },
   community: {
@@ -257,6 +355,40 @@ const enTranslation = {
   footer: {
     projectHome: "Project Homepage",
     copyright: "© {year} AST Explorer Helper. All rights reserved."
+  },
+  featuresPage: {
+    title: "Feature Details",
+    hideToolbar: {
+      title: "🔍 Hide Toolbar",
+      subtitle: "Increase View Space",
+      description: "Hide AST Explorer's toolbar to have more viewing space for code analysis.",
+      useCases: "Use Cases",
+      useCasesItems: [
+        "Get more workspace on small screen devices",
+        "Focus on AST structure analysis",
+        "Provide clearer code view"
+      ]
+    },
+    rightClickCopy: {
+      title: "📋 Right-Click Copy",
+      subtitle: "Quick Content Copy",
+      description: "Quickly copy node content via right-click menu, preserving original format without manual selection.",
+      usageTitle: "How to Use",
+      usageSteps: [
+        "Right-click on any AST node",
+        "Select the 'Copy' option",
+        "Node content is copied to clipboard"
+      ]
+    },
+    comingSoon: {
+      title: "🔮 Coming Soon",
+      description: "We're developing more useful features, stay tuned for:",
+      features: [
+        "Node path copying",
+        "Quick node type copying",
+        "More customization options"
+      ]
+    }
   }
 };
 

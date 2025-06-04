@@ -57,7 +57,8 @@
 }
 
 .monitorScreen.powerOff {
-  background-color: #f0f0f0;
+  background-color: #000;
+  border-color: #000;
 }
 
 /* 关闭状态下的黑屏占位元素 */
@@ -69,6 +70,7 @@
   height: 100%;
   background: #000000;
   z-index: 10;
+  border: none;
 }
 
 /* 添加反光效果 */

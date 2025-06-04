@@ -4,6 +4,7 @@ import styles from './Footer.module.css';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
   
   return (
     <footer className={styles.footer}>
@@ -26,7 +27,7 @@ const Footer: React.FC = () => {
         </a>
       </div>
       <div className={styles.copyright}>
-        {t('footer.copyright', { year: new Date().getFullYear() })}
+        © {currentYear} AST Explorer 助手。保留所有权利。
       </div>
     </footer>
   );

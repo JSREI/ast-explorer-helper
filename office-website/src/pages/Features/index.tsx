@@ -11,15 +11,15 @@ const Features: React.FC = () => {
           <h1 className="text-center">{t('featuresPage.title')}</h1>
           
           <div className="feature-detail">
-            <h2>{t('featuresPage.textSelection.title')}</h2>
+            <h2>{t('featuresPage.hideToolbar.title')}</h2>
             <div className="feature-content">
               <div className="feature-description">
-                <h3>{t('featuresPage.textSelection.subtitle')}</h3>
-                <p>{t('featuresPage.textSelection.description')}</p>
+                <h3>{t('featuresPage.hideToolbar.subtitle')}</h3>
+                <p>{t('featuresPage.hideToolbar.description')}</p>
                 
-                <h3>{t('featuresPage.textSelection.useCases')}</h3>
+                <h3>{t('featuresPage.hideToolbar.useCases')}</h3>
                 <ul>
-                  {(t('featuresPage.textSelection.useCasesItems', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                  {(t('featuresPage.hideToolbar.useCasesItems', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
@@ -28,15 +28,15 @@ const Features: React.FC = () => {
           </div>
 
           <div className="feature-detail">
-            <h2>{t('featuresPage.contextMenu.title')}</h2>
+            <h2>{t('featuresPage.rightClickCopy.title')}</h2>
             <div className="feature-content">
               <div className="feature-description">
-                <h3>{t('featuresPage.contextMenu.subtitle')}</h3>
-                <p>{t('featuresPage.contextMenu.description')}</p>
+                <h3>{t('featuresPage.rightClickCopy.subtitle')}</h3>
+                <p>{t('featuresPage.rightClickCopy.description')}</p>
                 
-                <h3>{t('featuresPage.contextMenu.usageTitle')}</h3>
+                <h3>{t('featuresPage.rightClickCopy.usageTitle')}</h3>
                 <ol>
-                  {(t('featuresPage.contextMenu.usageSteps', { returnObjects: true }) as string[]).map((step: string, index: number) => (
+                  {(t('featuresPage.rightClickCopy.usageSteps', { returnObjects: true }) as string[]).map((step: string, index: number) => (
                     <li key={index}>{step}</li>
                   ))}
                 </ol>

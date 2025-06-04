@@ -139,6 +139,16 @@
   margin-top: var(--space-8);
 }
 
+.featureColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .featureItem {
   background: var(--bg-white);
   border-radius: var(--radius-lg);
@@ -154,6 +164,12 @@
   border-color: var(--primary);
 }
 
+.featureHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
 .featureIcon {
   width: 48px;
   height: 48px;
@@ -162,21 +178,44 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-4);
+  margin-right: var(--space-4);
   color: var(--primary);
   font-size: 1.5rem;
 }
 
 .featureTitle {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: var(--space-3);
+  margin: 0;
 }
 
 .featureDescription {
   color: var(--text-secondary);
   line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.featureDemoWrapper {
+  width: 100%;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureDemoWrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.featureDemo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
 /* 安装指南部分 */
@@ -579,4 +618,110 @@
   color: var(--text-light);
   font-size: 0.9rem;
   margin-top: var(--space-3);
+}
+
+/* 安装方式部分 */
+.installMethods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-left: calc(2.5rem + var(--space-4));
+  margin-bottom: var(--space-4);
+}
+
+.installMethod {
+  background-color: var(--bg-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.installMethod:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.methodTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+}
+
+.methodSteps {
+  margin-top: var(--space-4);
+}
+
+.methodSteps ol {
+  padding-left: var(--space-5);
+  margin-bottom: 0;
+  color: var(--text-secondary);
+}
+
+.methodSteps li {
+  margin-bottom: var(--space-2);
+  position: relative;
+}
+
+.methodSteps li::marker {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .installMethods {
+    margin-left: calc(2rem + var(--space-3));
+    gap: var(--space-4);
+  }
+  
+  .methodTitle {
+    font-size: 1.1rem;
+  }
+}
+
+.codeBlock {
+  background-color: #2a2a2a;
+  color: #f8f8f8;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  font-family: 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  cursor: text;
+  position: relative;
+}
+
+.codeBlock:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: rgba(79, 147, 255, 0.5);
+}
+
+.codeBlock code {
+  display: block;
+  width: 100%;
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .codeBlock {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
 } 
