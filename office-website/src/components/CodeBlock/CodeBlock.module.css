@@ -1,0 +1,46 @@
+.codeBlockWrapper {
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.codeBlock {
+  background-color: #2a2a2a;
+  color: #f8f8f8;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-family: 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.codeBlock:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: rgba(79, 147, 255, 0.5);
+}
+
+.codeBlock code {
+  display: block;
+  width: 100%;
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .codeBlock {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+} 

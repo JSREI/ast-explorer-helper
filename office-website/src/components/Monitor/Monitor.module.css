@@ -54,6 +54,7 @@
 /* 屏幕电源状态 */
 .monitorScreen.powerOn {
   background-color: #fff;
+  border-color: transparent;
 }
 
 .monitorScreen.powerOff {

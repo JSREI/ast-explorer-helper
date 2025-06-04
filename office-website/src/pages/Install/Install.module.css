@@ -1,1 +1,27 @@
- 
+.compilationSteps {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.compilationSteps h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.compilationSteps ol {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+}
+
+.compilationSteps li {
+  margin-bottom: 1rem;
+}
+
+.compilationSteps li:last-child {
+  margin-bottom: 0;
+} 

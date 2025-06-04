@@ -4,6 +4,7 @@ import styles from './Home.module.css';
 import Monitor from '../../components/Monitor/Monitor';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import CodeBlock from '../../components/CodeBlock';
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -163,9 +164,7 @@ const Home: React.FC = () => {
                         <li key={index}>
                           <span>{step.text}</span>
                           {step.code && (
-                            <pre className={styles.codeBlock}>
-                              <code>{step.code}</code>
-                            </pre>
+                            <CodeBlock code={step.code} />
                           )}
                         </li>
                       ))}
@@ -262,11 +261,13 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <Lightbox
-        open={!!openImage}
-        close={() => setOpenImage(null)}
-        slides={[{ src: openImage || "" }]}
-      />
+      {openImage && (
+        <Lightbox
+          open={!!openImage}
+          close={() => setOpenImage(null)}
+          slides={[{ src: openImage }]}
+        />
+      )}
     </div>
   );
 };

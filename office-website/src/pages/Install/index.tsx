@@ -1,8 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import CodeBlock from '../../components/CodeBlock';
+import styles from './Install.module.css';
 
 const Install: React.FC = () => {
   const { t } = useTranslation();
+
+  // 定义安装步骤中的代码块
+  const cloneCommand = 'git clone https://github.com/JSREI/ast-explorer-helper.git';
+  const installCommand = 'npm install';
+  const buildCommand = 'npm run build';
 
   return (
     <div className="install-page">
@@ -59,6 +66,21 @@ const Install: React.FC = () => {
                   <li>{t('install.step2.dragAndDrop')}</li>
                 </ol>
               </p>
+              
+              <div className={styles.compilationSteps}>
+                <h3>自行编译安装</h3>
+                <ol>
+                  <li>克隆仓库:
+                    <CodeBlock code={cloneCommand} />
+                  </li>
+                  <li>安装依赖:
+                    <CodeBlock code={installCommand} />
+                  </li>
+                  <li>构建项目:
+                    <CodeBlock code={buildCommand} />
+                  </li>
+                </ol>
+              </div>
             </div>
 
             <div className="step">
