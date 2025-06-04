@@ -98,9 +98,14 @@ MIT License
 
 ## 👨‍💻 贡献者
 
-感谢以下用户报告问题与提出建议，帮助我们不断完善产品：
+感谢以下用户帮助我们不断完善产品：
 
-- [@mazp99](https://github.com/mazp99) - 提出代码块复制功能建议
+<p align="center">
+  <a href="https://github.com/mazp99" target="_blank">
+    <img src="https://github.com/mazp99.png" width="100px" alt="mazp99" style="border-radius: 50%;"><br>
+    <sub>mazp99</sub>
+  </a>
+</p>
 
 ## 💬 逆向技术交流群
 

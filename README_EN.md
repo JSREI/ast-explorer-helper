@@ -98,9 +98,14 @@ This project is based on [TypeScript UserScript Template](https://github.com/JSR
 
 ## 👨‍💻 Contributors
 
-Thanks to the following users for reporting issues and suggesting improvements, helping us to continuously enhance the product:
+Thanks to the following users for helping improve our product:
 
-- [@mazp99](https://github.com/mazp99) - Suggested the code block copy feature
+<p align="center">
+  <a href="https://github.com/mazp99" target="_blank">
+    <img src="https://github.com/mazp99.png" width="100px" alt="mazp99" style="border-radius: 50%;"><br>
+    <sub>mazp99</sub>
+  </a>
+</p>
 
 ## 💬 Reverse Engineering Community
 
