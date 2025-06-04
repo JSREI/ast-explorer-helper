@@ -85,6 +85,11 @@ module.exports = {
         {
           from: 'public/locales',
           to: 'locales'
+        },
+        // 复制gif动画文件
+        {
+          from: 'public/gif',
+          to: 'gif'
         }
       ]
     })
