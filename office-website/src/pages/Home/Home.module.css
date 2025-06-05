@@ -600,7 +600,7 @@
   }
   
   .installMethods {
-    margin-left: 0.5rem;
+    margin-left: 0rem;
   }
   
   .methodSteps ol {
@@ -807,8 +807,16 @@
 
 @media (max-width: 768px) {
   .installMethods {
-    margin-left: calc(2rem + var(--space-3));
+    margin-left: 0.5rem;
     gap: var(--space-4);
+  }
+  
+  .installMethod {
+    padding: var(--space-3);
+  }
+  
+  .methodSteps ol {
+    padding-left: var(--space-4);
   }
   
   .methodTitle {
@@ -821,6 +829,71 @@
 
   .step p, .step ol, .step ul, .browserOptions {
     margin-left: calc(2rem + var(--space-2));
+  }
+}
+
+@media (max-width: 480px) {
+  .installMethod {
+    padding: var(--space-2);
+  }
+  
+  .methodSteps ol {
+    padding-left: var(--space-3);
+  }
+  
+  .methodSteps {
+    margin-top: var(--space-2);
+  }
+  
+  .step p, .step ol, .step ul, .browserOptions, .installMethods {
+    margin-left: 0.5rem;
+  }
+  
+  .stepTitle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .stepNumber {
+    margin-bottom: var(--space-2);
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: var(--space-2);
+  }
+  
+  .installSteps::before {
+    display: none;
+  }
+  
+  .installMethods {
+    margin-left: 0rem;
+  }
+  
+  .methodSteps ol {
+    padding-left: var(--space-4);
+  }
+  
+  .contributorItem {
+    padding: var(--space-3);
+  }
+  
+  .contributorAvatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-top: 2rem;
+  }
+  
+  .hero {
+    padding-top: calc(var(--header-height) + var(--space-8) + 1rem);
+  }
+  
+  .heroContent {
+    padding-top: 4rem;
   }
 }
 
