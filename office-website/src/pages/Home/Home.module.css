@@ -266,7 +266,7 @@
 .step {
   background: var(--bg-white);
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  padding: var(--space-4);
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
@@ -307,13 +307,13 @@
 
 .step p {
   color: var(--text-secondary);
-  margin-left: calc(2.5rem + var(--space-4));
+  margin-left: calc(2.5rem + var(--space-2));
   margin-bottom: var(--space-4);
   line-height: 1.6;
 }
 
 .browserOptions {
-  margin-left: calc(2.5rem + var(--space-4));
+  margin-left: calc(2.5rem + var(--space-2));
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space-4);
@@ -341,10 +341,10 @@
 }
 
 .step ol, .step ul {
-  margin-left: calc(2.5rem + var(--space-4));
+  margin-left: calc(2.5rem + var(--space-2));
   margin-bottom: var(--space-4);
   color: var(--text-secondary);
-  padding-left: var(--space-4);
+  padding-left: var(--space-3);
 }
 
 .step li {
@@ -758,7 +758,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
-  margin-left: calc(1rem + var(--space-3));
+  margin-left: calc(2.5rem + var(--space-2));
   margin-bottom: var(--space-4);
 }
 
