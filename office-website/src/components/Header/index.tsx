@@ -14,6 +14,19 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ activeSection }): JSX.Element => {
   const { t } = useTranslation();
   const [star, setStar] = useState<number | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // 当菜单打开时禁止页面滚动
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const now = Date.now();
@@ -34,6 +47,11 @@ const Header: React.FC<HeaderProps> = ({ activeSection }): JSX.Element => {
     }
   }, []);
 
+  // 关闭菜单的处理函数
+  const handleNavLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={`${styles.header} ${activeSection === 'scrolled' ? styles.scrolled : ''}`}>
       <div className={`container ${styles.container}`}>
@@ -42,28 +60,32 @@ const Header: React.FC<HeaderProps> = ({ activeSection }): JSX.Element => {
             <img src="logo.png" alt="AST Explorer Helper" />
             {t('title')}
           </a>
-          <div className={styles.navLinks}>
+          <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
             <a
               href="#home"
               className={`${styles.navLink} ${activeSection === 'home' ? styles.active : ''}`}
+              onClick={handleNavLinkClick}
             >
               {t('nav.home')}
             </a>
             <a
               href="#features"
               className={`${styles.navLink} ${activeSection === 'features' ? styles.active : ''}`}
+              onClick={handleNavLinkClick}
             >
               {t('nav.features')}
             </a>
             <a
               href="#install"
               className={`${styles.navLink} ${activeSection === 'install' ? styles.active : ''}`}
+              onClick={handleNavLinkClick}
             >
               {t('nav.install')}
             </a>
             <a
               href="#community"
               className={`${styles.navLink} ${activeSection === 'community' ? styles.active : ''}`}
+              onClick={handleNavLinkClick}
             >
               {t('nav.community')}
             </a>
@@ -96,6 +118,14 @@ const Header: React.FC<HeaderProps> = ({ activeSection }): JSX.Element => {
             <span>{star !== null ? star : '--'}</span>
           </a>
           <LanguageSwitcher />
+          <div 
+            className={`${styles.mobileNavToggle} ${isMenuOpen ? styles.open : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </nav>
       </div>
     </header>
