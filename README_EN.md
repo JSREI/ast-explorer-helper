@@ -9,6 +9,8 @@ A simple and practical browser plugin to enhance the user experience of the [AST
 [![GitHub license](https://img.shields.io/github/license/JSREI/ast-explorer-helper?style=flat-square)](https://github.com/JSREI/ast-explorer-helper/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/JSREI/ast-explorer-helper?style=flat-square)](https://github.com/JSREI/ast-explorer-helper/issues)
 [![Greasy Fork](https://img.shields.io/badge/Greasy%20Fork-Install%20Script-brightgreen?style=flat-square)](https://greasyfork.org/en/scripts/419783-ast-explorer-helper)
+[![Installations](https://img.shields.io/badge/Installations-90+-brightgreen?style=flat-square)](https://greasyfork.org/en/scripts/419783-ast-explorer-helper)
+[![Version](https://img.shields.io/badge/Version-0.3.0-blue?style=flat-square)](https://greasyfork.org/en/scripts/419783-ast-explorer-helper)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tampermonkey](https://img.shields.io/badge/Tampermonkey-Extension-orange?style=flat-square)](https://www.tampermonkey.net/)
 

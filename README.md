@@ -9,6 +9,8 @@
 [![GitHub license](https://img.shields.io/github/license/JSREI/ast-explorer-helper?style=flat-square)](https://github.com/JSREI/ast-explorer-helper/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/JSREI/ast-explorer-helper?style=flat-square)](https://github.com/JSREI/ast-explorer-helper/issues)
 [![Greasy Fork](https://img.shields.io/badge/Greasy%20Fork-安装脚本-brightgreen?style=flat-square)](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手)
+[![安装量](https://img.shields.io/badge/安装量-90+-brightgreen?style=flat-square)](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手)
+[![版本](https://img.shields.io/badge/版本-0.3.0-blue?style=flat-square)](https://greasyfork.org/zh-CN/scripts/419783-ast-explorer助手)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![油猴](https://img.shields.io/badge/油猴-Tampermonkey-orange?style=flat-square)](https://www.tampermonkey.net/)
 
