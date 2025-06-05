@@ -580,7 +580,7 @@
   }
   
   .step p, .step ol, .step ul, .browserOptions, .installMethods {
-    margin-left: 0;
+    margin-left: 0.5rem;
   }
   
   .stepTitle {
@@ -590,10 +590,21 @@
   
   .stepNumber {
     margin-bottom: var(--space-2);
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: var(--space-2);
   }
   
   .installSteps::before {
     display: none;
+  }
+  
+  .installMethods {
+    margin-left: 0.5rem;
+  }
+  
+  .methodSteps ol {
+    padding-left: var(--space-4);
   }
   
   .contributorItem {
@@ -802,6 +813,14 @@
   
   .methodTitle {
     font-size: 1.1rem;
+  }
+  
+  .installSteps::before {
+    left: 1.5rem;
+  }
+
+  .step p, .step ol, .step ul, .browserOptions {
+    margin-left: calc(2rem + var(--space-2));
   }
 }
 
