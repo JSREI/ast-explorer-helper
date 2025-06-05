@@ -1,0 +1,154 @@
+{
+  "title": "AST Explorer Helper",
+  "subtitle": "Make AST analysis simpler and more efficient",
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "install": "Install",
+    "community": "Community"
+  },
+  "cta": {
+    "install": "Install Now",
+    "joinCommunity": "Join Community",
+    "viewSource": "View Source"
+  },
+  "features": {
+    "title": "Key Features",
+    "hideToolbar": {
+      "title": "Hide Toolbar",
+      "description": "Ability to hide the toolbar, increasing view space for a more comfortable code analysis experience"
+    },
+    "rightClickCopy": {
+      "title": "Right-Click Copy",
+      "description": "Support quick copying of node content with right-click menu while preserving original formatting"
+    }
+  },
+  "whyUse": {
+    "title": "Why Use AST Explorer Helper?",
+    "efficiency": {
+      "title": "Boost Efficiency",
+      "description": "Say goodbye to manual copying hassles and make AST analysis work more efficient"
+    },
+    "easyToUse": {
+      "title": "Easy to Use",
+      "description": "No complex configuration needed, install and use immediately with intuitive operations"
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "Completely open source, community-driven, and continuously improving"
+    }
+  },
+  "install": {
+    "title": "Installation Guide",
+    "step1": {
+      "title": "Install Userscript Manager",
+      "description": "First, install a userscript manager in your browser:",
+      "chrome": "Chrome/Edge Users",
+      "firefox": "Firefox Users",
+      "installTampermonkey": "Install Tampermonkey",
+      "installGreasemonkey": "Install Greasemonkey"
+    },
+    "step2": {
+      "title": "Install the Script",
+      "description": "After installing the userscript manager, click the button below to install the AST Explorer Helper:",
+      "installScript": "Install Script",
+      "note": "Note: If the button doesn't work, you can also:",
+      "visitRepo": "Visit our GitHub repository",
+      "downloadFile": "Download the dist/ast-explorer-helper.user.js file",
+      "dragAndDrop": "Manually drag and drop the file into your userscript manager page"
+    },
+    "step3": {
+      "title": "Start Using",
+      "description": "After installation:",
+      "visitSite": "Visit AST Explorer",
+      "autoEnable": "The script will be automatically enabled",
+      "enjoyFeature": "Now you can freely select and copy AST node content!"
+    },
+    "troubleshooting": {
+      "title": "Having Issues?",
+      "description": "If you encounter any problems during installation or use:",
+      "submitIssue": "Submit an Issue",
+      "viewSource": "View Source Code"
+    }
+  },
+  "contributors": {
+    "title": "Contributors & Thanks",
+    "description": "Thanks to the following users for helping improve our product:",
+    "list": [
+      {
+        "name": "mazp99",
+        "profile": "https://github.com/mazp99"
+      }
+    ]
+  },
+  "community": {
+    "title": "Reverse Engineering Community",
+    "subtitle": "Join Our Community",
+    "description": "Join our community for the latest updates and technical discussions",
+    "groups": {
+      "wechat": {
+        "name": "WeChat",
+        "description": "Scan the QR code to join our WeChat group:",
+        "note": "Scan to join WeChat group",
+        "additionalNote": "If the QR code expires, you can add my personal WeChat and send [Reverse Group] to join:",
+        "personalQRCode": "Personal WeChat QR code"
+      },
+      "qq": {
+        "name": "QQ Group",
+        "description": "Join our QQ group for the latest updates and technical support",
+        "note": "Scan to join QQ group",
+        "clickHere": "Click here",
+        "scanToJoin": "Scan to join QQ group:"
+      },
+      "telegram": {
+        "name": "Telegram",
+        "description": "Join our Telegram group for international community discussions",
+        "note": "Click to join Telegram group",
+        "clickHere": "Click here",
+        "scanToJoin": "Or scan to join Telegram group:"
+      }
+    }
+  },
+  "footer": {
+    "projectHome": "Project Homepage",
+    "copyright": "© {year} AST Explorer Helper. All rights reserved."
+  },
+  "language": {
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "featuresPage": {
+    "title": "Feature Details",
+    "hideToolbar": {
+      "title": "🔍 Hide Toolbar",
+      "subtitle": "Increase View Space",
+      "description": "Hide AST Explorer's toolbar to have more viewing space for code analysis.",
+      "useCases": "Use Cases",
+      "useCasesItems": [
+        "Get more workspace on small screen devices",
+        "Focus on AST structure analysis",
+        "Provide clearer code view"
+      ]
+    },
+    "rightClickCopy": {
+      "title": "📋 Right-Click Copy",
+      "subtitle": "Quick Content Copy",
+      "description": "Quickly copy node content via right-click menu, preserving original format without manual selection.",
+      "usageTitle": "How to Use",
+      "usageSteps": [
+        "Right-click on any AST node",
+        "Select the 'Copy' option",
+        "Node content is copied to clipboard"
+      ]
+    },
+    "comingSoon": {
+      "title": "🔮 Coming Soon",
+      "description": "We're developing more useful features, stay tuned for:",
+      "features": [
+        "Node path copying",
+        "Quick node type copying",
+        "More customization options"
+      ]
+    }
+  }
+} 
